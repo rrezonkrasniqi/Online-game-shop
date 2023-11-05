@@ -17,6 +17,8 @@ Projekt per lenden Dizajn dhe Zhvillim i Webit
 ## 🚀 Reth projektit
 Projekti eshte nje web faqe per blerjen dhe download te lojrave kompjuterike online.
 
+![alt text](https://github.com/rrezonkrasniqi/Online-game-shop/blob/main/logo.png?raw=true)
+
 ## Hape projektin ne kompjuterin tuaj
 
 Beje projektin clone nga Github
