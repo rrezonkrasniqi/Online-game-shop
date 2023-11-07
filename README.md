@@ -3,8 +3,8 @@
 Projekt per lenden Dizajn dhe Zhvillim i Webit
 
 ## Grupi
-- [@rrezonkrasniqi](https://www.github.com/rrezonkrasniqi)
-- [@enespaqarizi](https://www.github.com/enespaqarizi)
+- [@rrezonkrasniqi](https://www.github.com/rrezonk16)
+- [@enespaqarizi](https://github.com/YyepPo)
 
 ## Profesoreshe
 - @Greta Ahma
@@ -24,7 +24,7 @@ Projekti eshte nje web faqe per blerjen dhe download te lojrave kompjuterike onl
 Beje projektin clone nga Github
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/rrezonk16/Online-game-shop.git
 ```
 
 
