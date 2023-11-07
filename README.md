@@ -37,8 +37,6 @@ Beje projektin clone nga Github
 
 ## Faqe te njejta
 
-  TULULU
-
 Kjo faqe eshte inspirim nga
 - Epic Games Store
 - Steam
