@@ -8,6 +8,20 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    KOKOKOK
+    <script>
+        let userDataJSON = localStorage.getItem('userData');
+    
+        if (userDataJSON) {
+          let userData = JSON.parse(userDataJSON);
+    
+          document.write("Name: " + userData.name + "<br>");
+          document.write("Email: " + userData.email + "<br>");
+          document.write("Username: " + userData.username + "<br>");
+          document.write("Password: " + userData.password + "<br>");
+          document.write("Birthday: " + userData.birthday + "<br>");
+        } else {
+          document.write("No user data found in local storage.");
+        }
+      </script>
 </body>
 </html>
