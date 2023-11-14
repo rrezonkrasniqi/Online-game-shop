@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <script>
+        let userDataJSON = localStorage.getItem('userData');
+    
+        if (userDataJSON) {
+          let userData = JSON.parse(userDataJSON);
+    
+          document.write("Name: " + userData.name + "<br>");
+          document.write("Email: " + userData.email + "<br>");
+          document.write("Username: " + userData.username + "<br>");
+          document.write("Password: " + userData.password + "<br>");
+          document.write("Birthday: " + userData.birthday + "<br>");
+        } else {
+          document.write("No user data found in local storage.");
+        }
+      </script>
+</body>
+</html>

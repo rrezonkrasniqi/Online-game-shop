@@ -1,0 +1,7 @@
+  @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+  html{
+    font-family: Kanit; 
+    color: white;
+    background: linear-gradient(90deg, #292454, #44214c, #441a3c);
+}
