@@ -8,8 +8,11 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <nav class="navbar">
-      <div class="topnav" id="myTopnav">
+    <nav class="navbar ">   
+      
+    <div class="main-container">
+
+      <div class="topnav " id="myTopnav">
         <img src="logo.png" alt="" class="navlogo" />
         <a href="index.html" class="active">Home</a>
         <a href="#">News</a>
@@ -18,7 +21,7 @@
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i class="menu"><img src="menu.svg" class="menu-icon" /></i>
         </a>
-      </div>
+      </div></div>
     </nav>
 
     <div class="main-container">
@@ -146,38 +149,29 @@
           </button>
         </div>
       </div>
-      <div class="latest-container">
-        <div class="game-card">
-          <div class="image-container">
-            <img src="Game_Images/fc_24.avif" alt="Game Image" />
+      <div class="news-container">
+        <div class="news-card">
+          <div class="news-image-container">
+            <img src="Game_Images/skymatch-cover.jpg" alt="Game Image" class="news-cover" />
           </div>
-          <div class="info-container">
+          <div class="news-info-container">
             <p class="game-name">Game Name</p>
             <p class="game-description">Game Description</p>
             <button class="read-more-btn">Read more</button>
           </div>
         </div>
-        <div class="game-card">
-          <div class="image-container">
-            <img src="Game_Images/fc_24.avif" alt="Game Image" />
+        <div class="news-card">
+          <div class="news-image-container">
+            <img src="Game_Images/fortnite-cover.avif" alt="Game Image" class="news-cover" />
           </div>
-          <div class="info-container">
-            <p class="game-name">Game Name</p>
-            <p class="game-description">Game Description</p>
+          <div class="news-info-container">
+            <p class="news-name">Game Name</p>
+            <p class="news-description">Game Description</p>
             <button class="read-more-btn">Read more</button>
           </div>
         </div>
 
-        <div class="game-card">
-          <div class="image-container">
-            <img src="Game_Images/fc_24.avif" alt="Game Image" />
-          </div>
-          <div class="info-container">
-            <p class="game-name">Game Name</p>
-            <p class="game-description">Game Description</p>
-            <button class="read-more-btn">Read more</button>
-          </div>
-        </div>
+       
       </div>
     </section>
 
@@ -272,6 +266,7 @@
         </div>
       </div>
     </section>
+
 
       <!-- <script>
         let userDataJSON = localStorage.getItem('userData');
@@ -544,10 +539,56 @@
       </div>
     </div>
 
+
+    <div class="decoration">
+1
+    </div>
+
+    
+    <div class="decoration-2">
+2
+    </div>
+    <div class="decoration-3">
+3
+    </div>
+    <div class="decoration-4">
+4
+    </div>
   </div>
+  <div class="footer-color">
+  <div class="main-container">
 
+  <footer>
+    
+    <div>
+      <img src="logo.png" alt="">
+      <h1>Online Game's Shop</h1>
+      <h3>Rrezon & Enes Solutions TM</h3>
+      <h4>Prizren 20000</h4>
+      <h4>Rruga Tirana, B11</h4>
+    </div>
+    <div class="footer-links">
+      <a href="home.html">Home</a>
+      <a href="news.html">News</a>
+      <a href="contact.html">Contact</a>
+      <a href="about.html">About</a>
+      <a href="latest.html">Latest</a>
+      <a href="sale.html">Sale</a>
+      <a href="recommended.html">Recommended</a>
+    </div>
+    <div class="newsletter">
+      <form action="" method="post">
+        <h1>Subscribe to our newsletter</h1>
+        <label for="email">Email</label>
+        <div class="input-container">
+        <input type="email" id="email" name="email" required class="email-input">
+        <button type="submit" class="subscribe-button">Subscribe</button></div>
+      </form>
+    </div>
+  </footer>
+</div>
   </body>
-
+  
   <script>
     function myFunction() {
       var x = document.getElementById("myTopnav");
