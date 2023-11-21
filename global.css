@@ -3,5 +3,9 @@
   html{
     font-family: Kanit; 
     color: white;
-    background: linear-gradient(90deg, #292454, #44214c, #441a3c);
+    background: linear-gradient(90deg, #201c42, #2f1635, #361430);
+}
+
+a{
+  text-decoration: none;
 }

@@ -317,8 +317,18 @@ body {
   }
 
   .game-card:hover{
-    background-color: #66666678;
+    background-color: #63636378;
+    border:2px solid #cccccc9a;
 
+}
+
+.game-card a{
+  font-size: 0px;
+
+}
+
+.game-card-image{
+  cursor: pointer;
 }
   .image-container {
     display: flex;
@@ -333,10 +343,16 @@ body {
   
   .info-container {
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: start;
+    align-items: baseline;
   }
   
-
+.bag-img{
+  width: 20px;
+}
   .game-name {
     font-size: 18px;
     font-weight: bold;
@@ -345,10 +361,23 @@ body {
   
   .game-description {
     font-size: 14px;
-    color: #666;
+    color: #b1adad;
     margin-bottom: 10px;
   }
   
+
+  .price{
+    font-size: 20px;
+    font-weight: bolder;
+    margin-left: 3px;
+  }
+
+  .price-for-sale{
+    font-size: 20px;
+    font-weight: bolder;
+    margin-left: 3px;
+    text-decoration: line-through;
+  }
   .read-more-btn {
     background-color: #3498db;
     color: #fff;
@@ -358,7 +387,29 @@ body {
     border-radius: 5px;
     font-size: 14px;
   }
+
+  .button-container{
+    display: flex;
+    gap: 10px;
+  }
+
+  .title-container{
+    display: flex;
+    flex-direction: column;
+  }
+  .buy-btn {
+    background-color: rgb(8, 189, 8);
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+  }
   
+  .buy-btn:hover{
+    background-color: rgb(9, 136, 9);
+  }
   .read-more-btn:hover {
     background-color: #2980b9;
   }
