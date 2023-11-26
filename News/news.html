@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./news.css">
+    <link rel="stylesheet" href="../global.css">
+</head>
+<body>
+        <!-- Navbari -->
+        <nav class="navbar">
+            <div class="main-container">
+              <div class="topnav" id="myTopnav">
+                <img src="../logo.png" alt="" class="navlogo" />
+                <a href="index.html" class="active">Home</a>
+                <a href="#">News</a>
+                <a href="#">Contact</a>
+                <a href="#">About</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                  <i class="menu"><img src="../menu.svg" class="menu-icon" /></i>
+                </a>
+              </div>
+            </div>
+          </nav>
+      
+    <div class="main-container">
+        <div class="article">
+                <img src="../Game_Images/fortnite-cover.jpg" alt="fortnite-cover" class="mini-news-cover">
+            <div class="title-and-text">
+                <p class="title" >Fortnite brings no "ZERO BUILD" mode</p>
+                <p class="description"> As more players left the game and other advanced at boulding
+                    fortnite decided to create a mode without builds and they
+                    promise the will bring more to this ...</p>
+                <div class="written-by">
+                <p>By: Enes Paqarizi</p> 
+                <p>26.11.2023</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="article">
+            <img src="../Game_Images/gtaVI.png" alt="gta-cover" class="mini-news-cover">
+        <div class="title-and-text">
+            <p class="title" >GTA 6: Everything we know so far</p>
+            <p class="description"> Your biggest Grand Theft Auto 6 questions answered on the GTA 6
+                leak, setting, location, characters, and more...</p>
+            <div class="written-by">
+            <p>By: Enes Paqarizi</p> 
+            <p>26.11.2023</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="article">
+        <img src="../Game_Images/gta-map.jpg" alt="gta-cover" class="mini-news-cover">
+    <div class="title-and-text">
+        <p class="title" >GTA 6 map
+        </p>
+        <p class="description">While the final GTA 6 map is yet to be shown, there are some indicators from the leaked video and screens that indicate a play space that stretches beyond the confines of Vice City..</p>
+        <div class="written-by">
+        <p>By: Enes Paqarizi</p> 
+        <p>26.11.2023</p>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <img src="../Game_Images/gta-char.jpg" alt="gta-cover" class="mini-news-cover">
+<div class="title-and-text">
+    <p class="title" >GTA 6 characters: Will there be a GTA 6 female protagonist?</p>
+    <p class="description"> As more players left the game and other advanced at boulding
+        fortnite decided to create a mode without builds and they
+        promise the will bring more to this ...</p>
+    <div class="written-by">
+    <p>By: Enes Paqarizi</p> 
+    <p>26.11.2023</p>
+    </div>
+</div>
+</div>
+    </div>
+    <div class="footer-color">
+        <div class="main-container">
+          <footer>
+            <div>
+              <img src="../logo.png" alt="" />
+              <h1>Online Game's Shop</h1>
+              <h3>Rrezon & Enes Solutions TM</h3>
+              <h4>Prizren 20000</h4>
+              <h4>Rruga Tirana, B11</h4>
+            </div>
+            <div class="footer-links">
+              <a href="home.html">Home</a>
+              <a href="news.html">News</a>
+              <a href="contact.html">Contact</a>
+              <a href="about.html">About</a>
+              <a href="latest.html">Latest</a>
+              <a href="sale.html">Sale</a>
+              <a href="recommended.html">Recommended</a>
+            </div>
+            <div class="newsletter">
+              <form action="" method="post">
+                <h1>Subscribe to our newsletter</h1>
+                <label for="email">Email</label>
+                <div class="input-container">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="email-input"
+                  />
+                  <button type="submit" class="subscribe-button" form="my-form" onclick="alert('You succesfully subscribed to our newsletter')">
+                    Subscribe
+                  </button>
+                </div>
+              </form>
+            </div>
+          </footer>
+        </div>
+      </div>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+      </script>
+</body>
+</html>
