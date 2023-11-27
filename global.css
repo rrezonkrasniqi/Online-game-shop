@@ -151,15 +151,32 @@ footer div {
 }
 
 footer a {
+  position: relative;
   color: #fff;
   text-decoration: none;
   margin: 0 15px;
   font-weight: bold;
 }
 
-footer a:hover {
-  border-bottom: 2px solid #fff;
+.hebele a:before
+{
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  top: 100%;
+  left: 0;
+  background-color: rgb(187, 175, 200);
+  transition: .3s;
 }
+
+.hebele a:hover::before
+{
+  width: 100%;
+}
+
+
+footer
 
 footer form {
   display: flex;
@@ -179,6 +196,7 @@ footer input {
   border-bottom-left-radius: 20px;
   box-sizing: border-box;
 }
+
 
 .input-container {
   display: flex;
