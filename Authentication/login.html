@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../global.css" />
     <link rel="icon" href="../favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">  
   </head>
   <body>
     <div class="container">
@@ -21,8 +22,11 @@
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required />
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required />
+            <label for="password">Password: </label>
+            <div id="password-container">
+              <input type="password" id="password-input" name="password" required />
+              <i id="eye" class="fa-sharp fa-solid fa-eye-slash" style="color: #000000; "></i>
+            </div>
 
             <button type="button" onclick="saveAndRedirect()">Login</button>
             <div class="under-links">
@@ -289,20 +293,53 @@
     </div>
 
     <script>
+      var eyeIcon = document.getElementById("eye");
+      var passwordField = document.getElementById("password-input");
+      let isEyeClosed = true;
+
+      passwordShowHide();
+
+      function passwordShowHide()
+      {
+        eyeIcon.addEventListener("click", () => {
+          if(isEyeClosed)
+          {
+            eyeIcon.className = 'fa-solid fa-eye';
+            passwordField.type = "text";
+          }
+          else
+          {
+            eyeIcon.className = 'fa-sharp fa-solid fa-eye-slash';
+            passwordField.type = "password";
+          }
+          isEyeClosed = !isEyeClosed;
+        })
+      }
+
       function saveAndRedirect() {
         var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
+        var password = passwordField.value;
 
-        if (username && password) {
-          var loginData = {
+        function isPasswordValid()
+        {
+          var passwordRegex = /^[a-zA-Z\s]{6,}$/;
+          return passwordRegex.test(password) ;
+        }
+
+        if (isPasswordValid() && username != "") 
+        {
+          var loginData = 
+          {
             username: username,
             password: password,
           };
 
-          localStorage.setItem("loginData", JSON.stringify(loginData));
+          //localStorage.setItem("loginData", JSON.stringify(loginData));
 
           window.location.href = "../index.html";
-        } else {
+        } 
+        else 
+        {
           alert("Please enter both username and password.");
         }
       }
