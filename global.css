@@ -159,7 +159,7 @@ footer a {
   font-weight: bold;
 }
 
-.hebele a:before
+.footer-links a:before
 {
   content: "";
   position: absolute;
@@ -171,7 +171,7 @@ footer a {
   transition: .3s;
 }
 
-.hebele a:hover::before
+.footer-links a:hover::before
 {
   width: 100%;
 }
