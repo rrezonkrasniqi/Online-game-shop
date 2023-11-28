@@ -44,6 +44,10 @@
 
 .game-platform {
     font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    padding-bottom: 10px;
   }
 
   
@@ -79,7 +83,20 @@
   font-size: 30px;
   font-weight: bold;
 }
+
+
+
+.game-long-description{
+  padding: 20px;
+ }
+
 }
+
+.platform-icon{
+  width: 25px;
+  padding-top: 10px;
+}
+
 
 .buy-btn {
     background-color: rgb(8, 189, 8);
@@ -125,6 +142,5 @@
   }
 
   .game-long-description{
-    padding: 20px;
     text-align: justify;
   }

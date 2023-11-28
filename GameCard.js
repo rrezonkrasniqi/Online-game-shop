@@ -27,22 +27,22 @@ var freeSectionData = [
         name: "CS 2",
         description: "Competitive fps shooter",
         price: "Free",
-        imageUrl: "Game_Images/New-Project-_5_.avif",
-        link: "/Games/gtaV.html"
+        imageUrl: "/Game_Images/cs2-cover.png",
+        link: "/Games/counter-strike-2.html"
     },
     {
         name: "Valorant",
         description: "Competitive fps shooter",
         price: "Free",
         imageUrl: "Game_Images/valorant.avif",
-        link: "/Games/Valorant"
+        link: "/Games/valorant.html"
     },
     {
         name: "Rocket League",
         description: "Cars and goals",
         price: "Free",
         imageUrl: "Game_Images/rocket.avif",
-        link: "/Games/Valorant"
+        link: "/Games/rocket-leaug"
     }
 ];
 
