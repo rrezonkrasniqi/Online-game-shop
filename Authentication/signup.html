@@ -305,6 +305,9 @@
           var birthday = document.getElementById("birthday").value;
           console.log(name);
       
+          var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+/;
+
+
           var currentDate = new Date();
           var userBirthday = new Date(birthday);
           var ageDiff = currentDate.getFullYear() - userBirthday.getFullYear();
@@ -321,15 +324,17 @@
       
           if (name === "" || email === "" || username === "" || password === "") {
             alert("Please fill the entire form");
-          } else {
+          } else if (!emailRegex.test(email)) {
+              alert ("Your email is wrong")
+          }
+          else{
             var userData = {
               name: name,
               email: email,
               username: username,
               password: password,
               birthday: birthday
-            };
-      
+            }
             var userDataJSON = JSON.stringify(userData);
       
             localStorage.setItem('userData', userDataJSON);
