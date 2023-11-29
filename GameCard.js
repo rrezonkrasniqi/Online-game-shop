@@ -4,21 +4,21 @@ var recommendedSectionData = [
         description: "Cars and goals",
         price: "Free",
         imageUrl: "Game_Images/rocket.avif",
-        link: "/Games/Valorant"   
+        link: "/Games/rocket-league"   
     },
     {
         name: "FIFA 2023",
         description: "Play football online",
         price: " 69.99$",
         imageUrl: "Game_Images/fifa23.avif",
-        link: "/Games/Valorant"
+        link: "/Games/fifa-2023"
     },
     {
         name: "GTA V",
         description: " action-adventure",
         price: " 19.99$",
         imageUrl: "Game_Images/gtaV.avif",
-        link: "/Games/Valorant"
+        link: "/Games/gta-v"
     },
 ];
 
@@ -42,7 +42,7 @@ var freeSectionData = [
         description: "Cars and goals",
         price: "Free",
         imageUrl: "Game_Images/rocket.avif",
-        link: "/Games/rocket-leaug"
+        link: "/Games/rocket-league.html"
     }
 ];
 
@@ -99,9 +99,17 @@ function CreateGameCard(data,section) {
     readMoreBtn.textContent = 'Read more';
     readMoreBtn.classList.add('read-more-btn');
 
+    readMoreBtn.addEventListener('click', function () {
+        window.location.href = data.link;
+    });
+
     var buyBtn = document.createElement('button');
     buyBtn.className = 'buy-btn';
     buyBtn.classList.add('buy-btn');
+
+    buyBtn.addEventListener('click', function () {
+        window.location.href = "/Authentication/login.html";
+    });
 
     var bagImg = document.createElement('img');
     bagImg.src = '/bag.svg';
