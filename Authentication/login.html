@@ -292,57 +292,8 @@
       </div>
     </div>
 
-    <script>
-      var eyeIcon = document.getElementById("eye");
-      var passwordField = document.getElementById("password-input");
-      let isEyeClosed = true;
+    <script src="login.js">
 
-      passwordShowHide();
-
-      function passwordShowHide()
-      {
-        eyeIcon.addEventListener("click", () => {
-          if(isEyeClosed)
-          {
-            eyeIcon.className = 'fa-solid fa-eye';
-            passwordField.type = "text";
-          }
-          else
-          {
-            eyeIcon.className = 'fa-sharp fa-solid fa-eye-slash';
-            passwordField.type = "password";
-          }
-          isEyeClosed = !isEyeClosed;
-        })
-      }
-
-      function saveAndRedirect() {
-        var username = document.getElementById("username").value;
-        var password = passwordField.value;
-
-        function isPasswordValid()
-        {
-          var passwordRegex = /^[a-zA-Z\s]{6,}$/;
-          return passwordRegex.test(password) ;
-        }
-
-        if (isPasswordValid() && username != "") 
-        {
-          var loginData = 
-          {
-            username: username,
-            password: password,
-          };
-
-          //localStorage.setItem("loginData", JSON.stringify(loginData));
-
-          window.location.href = "../index.html";
-        } 
-        else 
-        {
-          alert("Please enter both username and password.");
-        }
-      }
     </script>
   </body>
 </html>
