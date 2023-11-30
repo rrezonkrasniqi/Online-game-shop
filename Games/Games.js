@@ -4,21 +4,21 @@ var recommendedSectionData = [
         description: "Cars and goals",
         price: "Free",
         imageUrl: "Game_Images/rocket.avif",
-        link: "/Games/rocket-league.html"   
+        link: "/Games/rocket-league"   
     },
     {
         name: "FIFA 2023",
         description: "Play football online",
         price: " 69.99$",
         imageUrl: "Game_Images/fifa23.avif",
-        link: "/Games/fifa-2023.html"
+        link: "/Games/fifa-2023"
     },
     {
         name: "GTA V",
         description: " action-adventure",
         price: " 19.99$",
         imageUrl: "Game_Images/gtaV.avif",
-        link: "/Games/gta-v.html"
+        link: "/Games/gta-v"
     },
 ];
 

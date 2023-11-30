@@ -1,6 +1,5 @@
 function validateAndSubmit() {
     var name = document.getElementById("name").value;
-    var username = document.getElementById("username").value;
     var email = document.getElementById("email").value;
     var textField = document.getElementById("text-field").value;
 
