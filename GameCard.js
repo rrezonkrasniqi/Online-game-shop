@@ -46,7 +46,58 @@ var freeSectionData = [
     }
 ];
 
-function CreateGameCard(data,section) {
+var saleSectionData = [
+    {
+        name: "Fortine",
+        description: "100 players 1 winner",
+        priceForSale: "9.99$",
+        price: "Free",
+        imageUrl: "/Game_Images/fortnite.avif",
+        link: "/Games/fortnite.html"
+    },
+    {
+        name: "Among Us",
+        description: "Find the impostor to win",
+        priceForSale: "9.99$",
+        price: "3.99$",
+        imageUrl: "Game_Images/among_us.avif",
+        link: "/Games/amonug_us.html"
+    },
+    {
+        name: "Watch Dogs 2",
+        description: "All the power in your hands",
+        priceForSale: "19.99$",
+        price: "10.99$",
+        imageUrl: "Game_Images/watch_dogs.avif",
+        link: "/Games/watch-dogs-2.html"
+    }
+]
+
+var latestSectionData = [
+    {
+        name: "Fifa 2024",
+        description: "Play football online",
+        price: "3.99$/Monthly",
+        imageUrl: "/Game_Images/fc_24.avif",
+        link: "/Games/fifa-2024.html"
+    },
+    {
+        name: "Valorant",
+        description: "Competitive fps shooter",
+        price: "Free",
+        imageUrl: "Game_Images/valorant.avif",
+        link: "/Games/valorant.html"
+    },
+    {
+        name: "Cyberpunk 2077",
+        description: "Challange the world",
+        price: "89.99$",
+        imageUrl: "Game_Images/cyberpunk.avif",
+        link: "/Games/cyberpunk-2077.html"
+    }
+]
+
+function CreateGameCard(data,section,bIsInSale) {
     var gameSection = document.getElementById(section);
     gameSection.classList.add('latest-container');
 
@@ -85,6 +136,14 @@ function CreateGameCard(data,section) {
     gameDescription.textContent = data.description;
     gameDescription.classList.add('game-description');
 
+    if(bIsInSale == true)
+    {
+        var priceForSale = document.createElement('span');
+        priceForSale.className = 'price-for-sale';
+        priceForSale.textContent = data.priceForSale;
+        priceForSale.classList.add('price-for-sale');
+    }
+
     var price = document.createElement('span');
     price.className = 'price';
     price.textContent = data.price;
@@ -117,7 +176,6 @@ function CreateGameCard(data,section) {
     bagImg.className = 'bag-img';
     bagImg.classList.add('bag-img');
 
-    // Append elements to the DOM
     gameSection.appendChild(gameCard);
     gameCard.appendChild(imageContainer);
     imageContainer.appendChild(imageLink);
@@ -126,6 +184,7 @@ function CreateGameCard(data,section) {
     infoContainer.appendChild(titleContainer);
     titleContainer.appendChild(gameName);
     titleContainer.appendChild(gameDescription);
+    if(bIsInSale == true) infoContainer.appendChild(priceForSale);
     infoContainer.appendChild(price);
     infoContainer.appendChild(buttonContainer);
     buttonContainer.appendChild(readMoreBtn);
@@ -133,13 +192,15 @@ function CreateGameCard(data,section) {
     buyBtn.appendChild(bagImg);
 }
 
-function CreateGameCards(data,sectionName)
+function CreateGameCards(data,sectionName,bIsInSale)
 {
     for(i = 0;i< data.length;i++)
     {
-        CreateGameCard(data[i],sectionName);
+        CreateGameCard(data[i],sectionName,bIsInSale);
     }
 }
 
-CreateGameCards(recommendedSectionData,'recommended-section');
-CreateGameCards(freeSectionData,'free-section');
+CreateGameCards(recommendedSectionData,'recommended-section',false);
+CreateGameCards(freeSectionData,'free-section',false);
+CreateGameCards(saleSectionData,'for-sale-section',true);
+CreateGameCards(latestSectionData,'latest-section',false);
