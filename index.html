@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="index.css" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">  
     <script src="navbar.js"></script>
   </head>
 
@@ -21,12 +22,28 @@
           <a href="/News/news.html">News</a>
           <a href="/ContactUs/contactUs.html">Contact</a>
           <a href="/About/About.html">About</a>
+
+          <div id="search-bar-container">
+            <form action="search" id="search-form">
+              <input type="text" on oninput="searchGame()" placeholder="Search" name="search" id="search-bar">
+            </form>
+            <div id="search-container">
+                <div style="position: absolute; 
+                      overflow: hidden;
+                      z-index: 2;
+                      " 
+                      id="search-card-container">
+                </div>
+            </div>
+            <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>     
+          </div>
           <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="menu"><img src="menu.svg" class="menu-icon" /></i>
-          </a>
-        </div>
+          <i class="menu"><img src="menu.svg" class="menu-icon"/></i>
       </div>
-    </nav>
+    </div>
+  </nav>
+
+    <script src="index.js"></script>
 
     <div class="main-container">
       <div class="container">
