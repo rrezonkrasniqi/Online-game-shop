@@ -97,7 +97,7 @@ var latestSectionData = [
     }
 ]
 
-function createGameCard(data,section,bIsInSale) {
+function CreateGameCard(data,section,bIsInSale) {
     var gameSection = document.getElementById(section);
     gameSection.classList.add('latest-container');
 
@@ -192,88 +192,15 @@ function createGameCard(data,section,bIsInSale) {
     buyBtn.appendChild(bagImg);
 }
 
-function createGameCards(data,sectionName,bIsInSale)
-{
-    for(let i = 0;i<data.length;i++)
-    {
-        createGameCard(data[i],sectionName,bIsInSale);
-    }
-}
-
-createGameCards(recommendedSectionData,'recommended-section',false);
-createGameCards(freeSectionData,'free-section',false);
-createGameCards(saleSectionData,'for-sale-section',true);
-createGameCards(latestSectionData,'latest-section',false);
-
-var searchBarSectionData = [
-    {
-        name: "Rocket League",
-        description: "Cars and goals",
-        price: "99.99$",
-        cardIDd: "rocketleague",
-        imageUrl: "Game_Images/rocket.avif",
-        link: "/Games/rocket-league.html"   
-    },
-    {
-        name: "FIFA 2023",
-        description: "Play football online",
-        price: " 69.99$",
-        cardIDd: "fifa",
-        imageUrl: "Game_Images/fifa23.avif",
-        link: "/Games/fifa-2023.html"
-    },
-    {
-        name: "GTA V",
-        description: " action-adventure",
-        price: " 19.99$",
-        cardIDd: "gtav",
-        imageUrl: "Game_Images/gtaV.avif",
-        link: "/Games/gta-v.html"
-    },
-];
-
-createGameCardsForSearchBar(searchBarSectionData);
-
-function createGameCardsForSearchBar(data)
+function CreateGameCards(data,sectionName,bIsInSale)
 {
     for(i = 0;i< data.length;i++)
     {
-        gameCardForSearchBar(data[i],data[i].cardIDd);
+        CreateGameCard(data[i],sectionName,bIsInSale);
     }
 }
 
-function gameCardForSearchBar(data,cardId){
-    var searchCardContainer = document.getElementById('search-card-container');
-     
-    var searchItem = document.createElement('div');
-    searchItem.className = "search-item";   
-    searchItem.id = cardId;
-    searchItem.style.display = 'flex';
-    searchItem.style.cursor = 'pointer';
-
-    searchItem.addEventListener("click",() => {
-        window.location.href = data.link;
-
-    })
-
-    var searchCardImage = document.createElement('img');
-    searchCardImage.className = "search-item-image";
-    searchCardImage.src = data.imageUrl;
-
-    var searchCardInfo = document.createElement('div');
-    searchCardInfo.className = "search-item-info";
-
-    var searchItemName = document.createElement('p');
-    searchItemName.className = 'search-item-name';
-    searchItemName.innerHTML = data.name;
-
-    var searchItemPrice = document.createElement('p');
-    searchItemPrice.className = 'search-item-price';
-    searchItemPrice.innerHTML = data.price;
-
-    searchCardContainer.appendChild(searchItem);
-    searchItem.appendChild(searchCardImage);
-    searchItem.appendChild(searchCardInfo);
-    searchCardInfo.appendChild(searchItemName);
-    searchCardInfo.appendChild(searchItemPrice);
-}
+CreateGameCards(recommendedSectionData,'recommended-section',false);
+CreateGameCards(freeSectionData,'free-section',false);
+CreateGameCards(saleSectionData,'for-sale-section',true);
+CreateGameCards(latestSectionData,'latest-section',false);
