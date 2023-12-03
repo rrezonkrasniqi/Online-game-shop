@@ -173,7 +173,7 @@ function createGameCard(game) {
   readMoreBtn.onclick = function() {
     window.location.href = game.link;
   };
-  
+
   var buyBtn = document.createElement("button");
   buyBtn.className = "buy-btn";
   
@@ -212,6 +212,56 @@ function displayGameCards() {
     gameContainer.appendChild(gameCard);
   });
 }
+  
+ 
+  displayGameCards();
 
-// Call the function to display game cards on page load
-displayGameCards();
+
+
+  
+function searchGames(input) {
+    var searchTerm = input.toLowerCase();
+  
+    return allGames.filter(function (game) {
+      return (
+        game.name.toLowerCase().includes(searchTerm) ||
+        game.description.toLowerCase().includes(searchTerm)
+      );
+    });
+  }
+  
+  function updateDisplayedGames() {
+    var searchInput = document.getElementById("searchInput");
+    var matchingGamesContainer = document.getElementById(
+      "matchingGamesContainer"
+    );
+  
+    var searchTerm = searchInput.value.trim();
+  
+    if (searchTerm !== "") {
+      var matchingGames = searchGames(searchTerm);
+  
+      matchingGamesContainer.innerHTML = "";
+      matchingGames.forEach(function (game) {
+        var gameCard = document.createElement("div");
+        gameCard.className = "game-search";
+        var gameImage = document.createElement("div");
+
+        var gameLink = document.createElement("a");
+        gameLink.href = game.link;
+  
+        gameLink.textContent = game.name;
+  
+        gameCard.appendChild(gameLink);
+  
+        matchingGamesContainer.appendChild(gameCard);
+      });
+    } else {
+      matchingGamesContainer.innerHTML = "";
+    }
+  }
+  
+  document
+    .getElementById("searchInput")
+    .addEventListener("input", updateDisplayedGames);
+  
