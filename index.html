@@ -36,61 +36,23 @@
           <ol class="carousel__viewport">
             <li id="carousel__slide1" tabindex="0" class="carousel__slide">
               <div class="carousel__snapper">
-                <a href="#carousel__slide3" class="carousel__prev"
+                <a class="carousel__prev" id="prev-button"
                   ><img src="next.svg" alt="" class="prev-button"
                 /></a>
                 <img
                   src="./Game_Images/Formula_1.jpg"
                   alt=""
                   class="cover-images"
+                  id="cover-image"
                 />
-                <div class="carousel__text">
-                  <span class="title">F1® 23 AVAILABLE NOW WORLDWIDE</span>
+                <div class="carousel__text" >
+                  <span class="title" id="game-title-slider">F1® 23 AVAILABLE NOW WORLDWIDE</span>
                   <br />
-                  <span class="description">
+                  <span class="description" id="game-desc-slideri">
                     Be the last to brake and race to your legacy
                   </span>
                 </div>
-                <a href="#carousel__slide2" class="carousel__next"
-                  ><img src="next.svg" alt="" class="next-button"
-                /></a>
-              </div>
-            </li>
-            <li id="carousel__slide2" tabindex="0" class="carousel__slide">
-              <div class="carousel__snapper">
-                <a href="#carousel__slide1" class="carousel__prev"
-                  ><img src="next.svg" alt="" class="prev-button"
-                /></a>
-                <img src="./Game_Images/CS.jpg" alt="" class="cover-images" />
-                <div class="carousel__text">
-                  <span class="title">COUNTER-STRIKE 2 IS HERE</span>
-                  <br />
-                  <span class="description">
-                    Come join the millions of players who are honing their
-                    skills and rising through the ranks. Welcome to
-                    Counter-Strike 2.
-                  </span>
-                </div>
-                <a href="#carousel__slide3" class="carousel__next"
-                  ><img src="next.svg" alt="" class="next-button"
-                /></a>
-              </div>
-            </li>
-            <li id="carousel__slide3" tabindex="0" class="carousel__slide">
-              <div class="carousel__snapper">
-                <a href="#carousel__slide2" class="carousel__prev"
-                  ><img src="next.svg" alt="" class="prev-button"
-                /></a>
-                <img src="./Game_Images/fifa.jpg" alt="" class="cover-images" />
-                <div class="carousel__text">
-                  <span class="title">HIT THE PITCH EARLY WITH EA PLAY </span>
-                  <br />
-                  <span class="description"
-                    >Experience The World’s Game now for 10 full hours before
-                    worldwide release!
-                  </span>
-                </div>
-                <a href="#carousel__slide1" class="carousel__next"
+                <a class="carousel__next" id="next-button"
                   ><img src="next.svg" alt="" class="next-button"
                 /></a>
               </div>
@@ -98,7 +60,7 @@
           </ol>
         </section>
       </div>
-`
+
       <!-- For Sale section -->
       <section>
         <div class="section-title title">
@@ -552,6 +514,9 @@
         </footer>
       </div>
     </div>
+
+    <script src="index.js"></script>
+    
   </body>
 
 </html>
