@@ -53,3 +53,4 @@ function changeSliderContect()
     gameDesc.innerHTML = img[i].gameDescription;
     gameDesc.classList.add("description");
 }
+
