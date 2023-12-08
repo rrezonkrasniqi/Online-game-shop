@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../global.css" />
+    <link rel="stylesheet" href="contactUs.css" />
+    <script src="../navbar.js"></script>
+    <script src="contact.js"></script>
+
+  </head>
+  <body>
+
+
+
+    <!-- Navbari -->
+    <nav class="navbar">
+      <div class="main-container">
+        <div class="topnav" id="myTopnav">
+          <img src="../logo.png" alt="" class="navlogo" />
+          <a href="../index.html">Home</a>
+          <a href="../News/news.html">News</a>
+          <a href="../ContactUs/contactUs.html" class="active">Contact</a>
+          <a href="../About/About.html">About</a>
+          <a href="../Games/game.html">Games</a>
+
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="menu"><img src="../menu.svg" class="menu-icon" /></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="left-side">
+        <img src="../logo.png" alt="logo" class="login-logo" />
+      </div>
+      <div class="right-side">
+        <div class="form-container">
+          <form id="signupForm">
+            <h1>Contact Us</h1>
+
+              <label for="name">Name:</label>
+
+              <input type="text" id="name" name="name" required />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="text-field">What can we help you with?</label>
+            <textarea
+              name="text-field"
+              id="text-field"
+              cols="15"
+              rows="8"
+            ></textarea>
+
+            <button type="button" onclick="validateAndSubmit()">Submit</button>
+            <div class="under-links"></div>
+          </form>
+        </div>
+        <div class="right-line"></div>
+      </div>
+    </div>
+
+
+    <div class="footer-color">
+      <div class="main-container">
+        <footer>
+          <div>
+            <img src="logo.png" alt="" />
+            <h1>Online Game's Shop</h1>
+            <h3>Rrezon & Enes Solutions TM</h3>
+            <h4>Prizren 20000</h4>
+            <h4>Rruga Tirana, B11</h4>
+          </div>
+          <div class="footer-links">
+            <div class="hebele">
+              <a href="../index.html">Home</a>
+            </div>
+            <div class="hebele">
+              <a href="../News/news.html">News</a>
+            </div>
+            <div class="hebele">
+              <a href="../ContactUs/contactUs.html">Contact</a>
+            </div>
+            <div class="hebele">
+              <a href="../About/About.html">About</a>
+            </div>
+            <div class="hebele">
+              <a href="../Games/game.html">Latest</a>
+            </div>
+            <div class="hebele">
+              <a href="../Games/game.html">Sale</a>
+            </div>
+            <div class="hebele">
+              <a href="../Games/game.html">Recommended</a>
+            </div>
+          </div>
+          <div class="newsletter">
+            <form action="" method="post">
+              <h1>Subscribe to our newsletter</h1>
+              <label for="email">Email</label>
+              <div class="input-container">
+                <input
+                  type="email"
+                  id="email-last"
+                  name="email"
+                  required
+                  class="email-input"
+                />
+                <button
+                  type="submit"
+                  class="subscribe-button"
+                  form="my-form"
+                  onclick="subToNewsLetter()"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </form>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+
+
+
+  </body>
+  <script src="/global.js"></script>
+
+</html>

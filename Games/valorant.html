@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valorant</title>
+    <link rel="stylesheet" href="../global.css" />
+    <link rel="stylesheet" href="game.css" />
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script src="../navbar.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="main-container">
+        <div class="topnav" id="myTopnav">
+          <img src="../logo.png" alt="" class="navlogo" />
+          <a href="../index.html" >Home</a>
+          <a href="/News/news.html">News</a>
+          <a href="../ContactUs/ContactUs.html">Contact</a>
+          <a href="../About/About.html">About</a>
+          <a href="../Games/game.html" class="active">Games</a>
+
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="menu"><img src="../menu.svg" class="menu-icon" /></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="main-container game-container">
+      <div class="left-half">
+        <img
+          src="../Game_Images/valorant.avif"
+          class="game-cover"
+          alt="game-cover"
+        />
+      </div>
+      <div class="right-half">
+        <div class="game-info-top">
+          <span class="game-title">Valorant</span>
+          <span class="game-creator">Riot</span>
+          <span class="game-platform"
+            ><img src="windows-10-icon.svg" alt="" class="platform-icon" /></span>
+
+          <span class="game-rating">2.5 / 5</span>
+        </div>
+        <div class="game-info-bottom">
+
+          <span class="game-price-sale">Free</span>
+         <a href="../Authentication/login.html"> <div class="button-container">
+            <button class="cart-btn">Add to cart</button>
+            <button class="buy-btn">
+              <img src="/bag.svg" alt="" class="bag-img" />
+            </button>
+          </div></a>
+        </div>
+      </div>
+    </div>
+    <div class="main-container">
+      <div class="game-long-description">
+        <p>
+          Valorant 101<br><br>
+          Valorant is a 5v5 “Hero Shooter”, full of different playable characters called “Agents”, each with their own unique abilities, mechanics, etc. Each team can only have one of each agent active at any given time.<br>
+          The game has been praised for its steep learning curve and potential for highlight-worthy individual plays. It is available for free download on the Riot Games Client.<br>
+          Each game is round-based; the first team to win 13 rounds --and win by at least 2 rounds-- will win the game.<br>
+          If the round score is 12-12, overtime will commence until one team has gained a 2-round lead, at which point they will win the map/match.<br>
+          In-between rounds, players can purchase weapons, abilities, and shields using in-game “cash”. The amount of earned cash depends on the previous round performance.<br><br>
+          There are no respawns during a round. Once a player is eliminated, they will have to wait until the next round begins to respawn.<br>
+          “Plant/Diffuse” is the standard competitive game mode in Valorant. Attackers attempt to plant a bomb at one of the 2 (or 3) bomb sites and Defenders will try to stop them. The round ends when one of the following happens:<br>
+          The bomb is planted and explodes (attackers win)<br>
+          The bomb is defused by Defenders (defenders win)<br>
+          All members of a team are eliminated (team with players standing wins)<br>
+          Attackers fail to plant the bomb before the timer runs out (defenders win)<br><br>
+          Mechanics<br><br>
+          There are 4 types of agents that serve unique tactical purposes:<br>
+          Duelists (Self-sufficient eliminators of the opposing team)<br>
+          Controllers (manage territory to set their team up for success)<br>
+          Initiators (challenge angles & set up allies to successfully enter contested areas)<br>
+          Sentinels (defensive experts locking down areas and holding flanks)<br>
+          Abilities for the agents are separated into 3 distinct categories:<br>
+          Purchasable (bought with in-game “cash”; usually some form of item/utility)<br>
+          Signature (unique to each agent and “free”; needs to cool down before 2nd use during the same round)<br>
+          Ultimate (powerful abilities that are charged by completing objectives, eliminating opponents, or collecting “ultimate orbs” around the map)<br>
+          “Economy” refers to the management of in-game cash earned through completing rounds and an individual’s performance in those rounds. Players and teams will need to communicate and strategize how much money they’re spending to best gain an advantage against their opponents.
+          
+        </p>
+      </div>
+    </div>
+    <div class="footer-color">
+      <div class="main-container">
+        <footer>
+          <div>
+            <img src="../logo.png" alt="" />
+            <h1>Online Game's Shop</h1>
+            <h3>Rrezon & Enes Solutions TM</h3>
+            <h4>Prizren 20000</h4>
+            <h4>Rruga Tirana, B11</h4>
+          </div>
+     <div class="footer-links">
+            <div class="footer-link">
+              <a href="home.html">Home</a>
+            </div>
+            <div class="footer-link">
+              <a href="/News/news.html">News</a>
+            </div>
+            <div class="footer-link">
+              <a href="ContactUs/contactUs.html">Contact</a>
+            </div>
+            <div class="footer-link">
+              <a href="About/About.html">About</a>
+            </div>
+            <div class="footer-link">
+              <a href="/Games/game.html">Latest</a>
+            </div>
+            <div class="footer-link">
+              <a href="/Games/game.html">Sale</a>
+            </div>
+            <div class="footer-link">
+              <a href="/Games/game.html">Recommended</a>
+            </div>
+          </div>
+          <div class="newsletter">
+            <form action="" method="post">
+              <h1>Subscribe to our newsletter</h1>
+              <label for="email">Email</label>
+              <div class="input-container">
+                <input
+                  type="email"
+                  id="email-last"
+                  name="email"
+                  required
+                  class="email-input"
+                />
+                <button
+                  type="submit"
+                  class="subscribe-button"
+                  form="my-form"
+                  onclick="subToNewsLetter()"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </form>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+  <script src="/global.js"></script>
+</html>
+
+

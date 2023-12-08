@@ -1,0 +1,50 @@
+.cards{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: space-around;
+    align-items: center;
+}
+.c-title {
+    text-align: center;
+
+}
+
+
+.uni-logo{
+    width: 60px;
+}
+.card{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+    width: 35%;
+    background-color: rgba(68, 48, 48, 0.296);
+    border-radius: 15px;
+}
+
+.profile-image{
+    margin-top: -80px;
+    margin-bottom: 20px;
+    width: 100PX;
+    border-radius: 50%;
+}
+
+
+
+@media only screen and (max-width: 700px) {
+    .cards{
+        flex-direction: column;
+
+    }
+
+    .card{
+        margin-top: 40px;
+        width: 70%;
+    }
+
+
+    }

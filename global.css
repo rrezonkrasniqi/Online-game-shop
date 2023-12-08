@@ -1,0 +1,228 @@
+  @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+  html{
+    font-family: Kanit; 
+    color: white;
+    background: linear-gradient(90deg, #201c42, #2f1635, #361430);
+}
+
+a{
+  text-decoration: none;
+  color: white
+}
+.main-container {
+  z-index: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .main-container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .main-container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-container {
+    width: 1170px;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+.navlogo {
+  width: 60px;
+  height: 1%;
+  margin-right: 30px;
+}
+
+.topnav {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.navbar {
+  box-shadow: 4px -20px 10px 17px rgba(255, 255, 255, 0.8);
+  align-items: center;
+  overflow: hidden;
+}
+
+.topnav a {
+  
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  transition: 0.4s;
+}
+
+.topnav a:hover {
+  background-color: rgb(245, 61, 61);
+  color: white;
+}
+
+.topnav a.active {
+  border-bottom: 3px solid rgb(245, 61, 61);
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.menu-icon {
+  width: 3cqh;
+}
+
+@media screen and (max-width: 600px) {
+  .navlogo {
+    width: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+
+  .topnav a.icon {
+    display: block;
+  }
+
+  .topnav.responsive {
+    flex-direction: column;
+    padding-top: 10px;
+  }
+
+  .topnav {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .topnav.responsive a {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+
+
+footer {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  color: #fff;
+}
+
+footer img {
+  width: 100%;
+  max-width: 150px;
+  margin-bottom: 10px;
+}
+
+footer div {
+  flex: 1;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.newsletter {
+  text-align: start !important;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+footer a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+.footer-links a:before
+{
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  top: 100%;
+  left: 0;
+  background-color: rgb(187, 175, 200);
+  transition: .3s;
+}
+
+.footer-links a:hover::before
+{
+  width: 100%;
+}
+
+
+footer
+
+footer form {
+  display: flex;
+  flex-direction: column;
+}
+
+footer label {
+  margin-left: 5px;
+  margin-bottom: 10px;
+}
+
+footer input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  box-sizing: border-box;
+}
+
+
+.input-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-color {
+  background-color: #333;
+}
+
+.subscribe-button {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: none;
+  background-color: green;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+  }
+  footer div {
+    margin: 10px 0;
+  }
+}

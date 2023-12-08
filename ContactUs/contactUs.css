@@ -1,0 +1,138 @@
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.left-side {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-side {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.right-line {
+    width: 0px;
+    height: 625px;
+    border: 3px solid white;
+    position: relative;
+    animation: flicker 0.8s infinite alternate;
+    box-shadow: 0 0px 10px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+
+.login-logo {
+    padding-top: 100px;
+    rotate: 325deg;
+    max-width: 100%;
+}
+
+.form-container {
+    width: 40%;
+    padding: 20px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#text-field {
+    margin-bottom: 25px;
+    resize: none;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2b762f;
+}
+
+.link {
+    text-decoration: underline;
+    color: white;
+}
+
+.under-links {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: smaller;
+}
+
+@media only screen and (max-width: 1200px) {
+    .login-logo {
+        width: 60%;
+    }
+
+    .form-container {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .right-side {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .left-side,
+    .right-line {
+        display: none;
+    }
+
+    .form-container {
+        width: 75%;
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .form-container {
+        width: 90%;
+    }
+}
