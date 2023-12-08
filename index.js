@@ -9,12 +9,12 @@ var img = [
     {
         imgSrc: "./Game_Images/gtaVI.png",
         gameTitle: "GTA VI",
-        gameDescription: "Be the last to brake and race to your legacy"
+        gameDescription: "Grand Theft Auto and more"
     },
     {
-        imgSrc: "./Game_Images/far-cry-6.jpg",
+        imgSrc: "./Game_Images/far-cry-6-cover.jpg",
         gameTitle: "FAR CRY 6",
-        gameDescription: "Be the last to brake and race to your legacy"
+        gameDescription: "Play as Dani Rojas, a local Yaran and become a guerrilla fighter to liberate the nation"
     }
 ]
 
