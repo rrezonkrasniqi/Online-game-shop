@@ -192,7 +192,6 @@ li {
   flex-direction: row;
   border: 2px solid #cccccc5d;
   width: 30%;
-  height: 100%;
   background-color: #6666662c;
   transition: 0.3s;
 }

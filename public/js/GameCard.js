@@ -3,21 +3,21 @@ var recommendedSectionData = [
         name: "Rocket League",
         description: "Cars and goals",
         price: "Free",
-        imageUrl: "Game_Images/rocket.avif",
+        imageUrl: "images/Game_Images/rocket.avif",
         link: "/Games/rocket-league.html"   
     },
     {
         name: "FIFA 2023",
         description: "Play football online",
         price: " 69.99$",
-        imageUrl: "Game_Images/fifa23.avif",
+        imageUrl: "images/Game_Images/fifa23.avif",
         link: "/Games/fifa-2023.html"
     },
     {
         name: "GTA V",
         description: " action-adventure",
         price: " 19.99$",
-        imageUrl: "Game_Images/gtaV.avif",
+        imageUrl: "images/Game_Images/gtaV.avif",
         link: "/Games/gta-v.html"
     },
 ];
@@ -27,32 +27,32 @@ var freeSectionData = [
         name: "CS 2",
         description: "Competitive fps shooter",
         price: "Free",
-        imageUrl: "/Game_Images/cs2-cover.png",
+        imageUrl: "images/Game_Images/cs2-cover.png",
         link: "/Games/counter-strike-2.html"
     },
     {
         name: "Valorant",
         description: "Competitive fps shooter",
         price: "Free",
-        imageUrl: "Game_Images/valorant.avif",
+        imageUrl: "images/Game_Images/valorant.avif",
         link: "/Games/valorant.html"
     },
     {
         name: "Rocket League",
         description: "Cars and goals",
         price: "Free",
-        imageUrl: "Game_Images/rocket.avif",
+        imageUrl: "images/Game_Images/rocket.avif",
         link: "/Games/rocket-league.html"
     }
 ];
 
 var saleSectionData = [
     {
-        name: "Fortine",
+        name: "Fortnite",
         description: "100 players 1 winner",
         priceForSale: "9.99$",
         price: "Free",
-        imageUrl: "/Game_Images/fortnite.avif",
+        imageUrl: "images/Game_Images/fortnite.avif",
         link: "/Games/fortnite.html"
     },
     {
@@ -60,7 +60,7 @@ var saleSectionData = [
         description: "Find the impostor to win",
         priceForSale: "9.99$",
         price: "3.99$",
-        imageUrl: "Game_Images/among_us.avif",
+        imageUrl: "images/Game_Images/among_us.avif",
         link: "/Games/amonug_us.html"
     },
     {
@@ -68,7 +68,7 @@ var saleSectionData = [
         description: "All the power in your hands",
         priceForSale: "19.99$",
         price: "10.99$",
-        imageUrl: "Game_Images/watch_dogs.avif",
+        imageUrl: "images/Game_Images/watch_dogs.avif",
         link: "/Games/watch-dogs-2.html"
     }
 ]
@@ -78,22 +78,22 @@ var latestSectionData = [
         name: "Fifa 2024",
         description: "Play football online",
         price: "3.99$/Monthly",
-        imageUrl: "/Game_Images/fc_24.avif",
+        imageUrl: "images/Game_Images/fc_24.avif",
         link: "/Games/fifa-2024.html"
     },
     {
         name: "Valorant",
         description: "Competitive fps shooter",
         price: "Free",
-        imageUrl: "Game_Images/valorant.avif",
+        imageUrl: "images/Game_Images/valorant.avif",
         link: "/Games/valorant.html"
     },
     {
         name: "Cyberpunk 2077",
         description: "Challange the world",
         price: "89.99$",
-        imageUrl: "Game_Images/cyberpunk.avif",
-        link: "/Games/cyberpunk-2077.html"
+        imageUrl: "images/Game_Images/cyberpunk.avif",
+        link: "../images/Games/cyberpunk-2077.html"
     }
 ]
 

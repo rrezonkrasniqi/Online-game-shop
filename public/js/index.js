@@ -2,21 +2,22 @@ let i = 0;
 
 var img = [
     {
-        imgSrc: "./Game_Images/Formula_1.jpg",
+        imgSrc: "images/Game_Images/Formula_1.jpg",
         gameTitle: "F1® 23 AVAILABLE NOW WORLDWIDE",
         gameDescription: "Be the last to brake and race to your legacy"
     },
     {
-        imgSrc: "./Game_Images/gtaVI.png",
+        imgSrc: "images/Game_Images/gtaVI.png",
         gameTitle: "GTA VI",
         gameDescription: "Grand Theft Auto and more"
     },
     {
-        imgSrc: "./Game_Images/far-cry-6-cover.jpg",
+        imgSrc: "images/Game_Images/far-cry-6-cover.jpg",
         gameTitle: "FAR CRY 6",
         gameDescription: "Play as Dani Rojas, a local Yaran and become a guerrilla fighter to liberate the nation"
     }
 ]
+
 
 var coverImage = document.getElementById("cover-image");
 
