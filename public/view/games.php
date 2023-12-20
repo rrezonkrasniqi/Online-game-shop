@@ -19,6 +19,7 @@ require_once '../../src/controller/Game.php';
 <body>
 <?php include('navbar.php'); ?>
 
+
     <div class="main-container">
     <div class="games-container">
 
@@ -41,6 +42,7 @@ require_once '../../src/controller/Game.php';
                 ?>
         </div>
     </div>
+    <?php include('footer.php'); ?>
 
 </body>
 
