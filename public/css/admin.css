@@ -1,0 +1,30 @@
+.continue-icon{
+    width: 40px;
+    transition: 0.3s;
+
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+}
+
+.option{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.option:hover{
+    background-color: rgba(128, 128, 128, 0.097);
+    .continue-icon{
+        translate:-20px;
+    }
+}
