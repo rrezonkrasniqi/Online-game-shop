@@ -34,7 +34,7 @@ require_once '../../src/controller/Game.php';
 
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    $game = new Game($row['name'], $row['description'], $row['price'], $row['image'], $row['release_date'], $row['platform'], $row['rating']);
+                    $game = new Game($row['name'], $row['description'], $row['price'], $row['image'], $row['release_date'], $row['platform'], $row['rating'],$row['creator']);
                     $game->displayInfo();
                 }
             } else {

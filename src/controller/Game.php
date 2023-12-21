@@ -7,11 +7,13 @@ class Game
     private $image;
     private $release_date;
     private $rating;
-
-    
     private $platform;
 
-    public function __construct($name, $description, $price, $image, $release_date, $platform, $rating)
+    private $creator;
+
+    private $platform_image;
+
+    public function __construct($name, $description, $price, $image, $release_date, $platform, $rating ,$creator)
     {
         $this->name = $name;
         $this->description = $description;
@@ -20,15 +22,22 @@ class Game
         $this->release_date = $release_date;
         $this->platform = $platform;
         $this->rating = $rating;
+        $this->creator = $creator;
+
         if ($this->price == 0) {
             $this->price = "Free";
+        }
+
+        if ($this->platform == "Windows") {
+            $this->platform_image = "../../public/images/windows-10-icon.svg";
+        } else if ($this->platform == "PlayStation") {
+            $this->platform_image = "../../public/images/playstation.png";
         }
     }
 
 
     public function display()
     {
-       
         echo "<div class=\"game-card\">";
         echo "<div class=\"image-container\">";
         echo "<img src=\"{$this->image}\" alt=\"Game Image\" class=\"game-card-image\">";
@@ -48,8 +57,6 @@ class Game
         echo "</a>";
         echo "</div>";
         echo "</div>";
-
-
     }
 
     public function displayInfo()
@@ -61,10 +68,8 @@ class Game
         echo "<div class=\"right-half\">";
         echo "<div class=\"game-info-top\">";
         echo "<span class=\"game-title\">{$this->name}</span>";
-        echo "<span class=\"game-creator\">{$this->platform}</span>";
-
-        echo "<span class=\"game-creator\">CD PROJEKT RED</span>";
-        echo "<span class=\"game-platform\"><img src=\"windows-10-icon.svg\" alt=\"\" class=\"platform-icon\" /></span>";
+        echo "<span class=\"game-creator\">{$this->creator}</span>";
+        echo "<span class=\"game-platform\"><img src=\"{$this->platform_image}\" alt=\"\" class=\"platform-icon\" /></span>";
         echo "<span class=\"game-rating\">$this->rating / 5</span>";
         echo "</div>";
         echo "<div class=\"game-info-bottom\">";
@@ -82,7 +87,7 @@ class Game
         echo "</div>";
         echo "</div>";
     }
-
 }
+
 ?>
 
