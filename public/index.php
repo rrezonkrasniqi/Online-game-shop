@@ -13,25 +13,21 @@
     <script src="js/navbar.js"></script>
 
   <body>
-    <!-- Navbari -->
-    <nav class="navbar">
-      <div class="main-container">
-        <div class="topnav" id="myTopnav">
-          <img src="images/logo.png" alt="" class="navlogo" />
-          <a href="index.html" class="active">Home</a>
-          <a href="/News/news.html">News</a>
-          <a href="/ContactUs/contactUs.html">Contact</a>
-          <a href="/About/About.html">About</a>
-          <a href="view/games.php">Games</a>
+  <?php include('view/navbar.php'); ?>
 
-          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="menu"><img src="images/menu.svg" class="menu-icon" /></i>
-          </a>
-        </div>
-      </div>
-    </nav>
 
     <div class="main-container">
+    <?php
+
+if (isset($_SESSION["user"])) {
+  if ($_SESSION["user"]["role"] == 2) {
+    echo"<a href=\"\">DASHBOARD</a>";}
+    $username = $_SESSION["user"]["username"];
+    echo "Welcome, $username!";
+}
+?>
+  
+  
       <div class="container">
         <section class="carousel" aria-label="Gallery">
           <ol class="carousel__viewport">

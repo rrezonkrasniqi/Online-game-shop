@@ -1,38 +1,26 @@
 <?php
 class Database
 {
-    private $host = "localhost";
-    private $user = "root";
-    private $password = "";
-    private $dbName = "webgameshop";
+    private $conn;
 
-    public function connect()
+    public function __construct($servername, $username, $password, $dbname)
     {
-        $conn = mysqli_connect($this->host,$this->user,$this->password,$this->dbName);
-        return $conn;
+        $this->conn = new mysqli($servername, $username, $password, $dbname);
+
+        // Check the connection
+        if ($this->conn->connect_error) {
+            die("Connection failed: " . $this->conn->connect_error);
+        }
     }
 
-    public function register($name,$email,$username,$pw,$birthday)
+    public function query($sql)
     {
-        $con = $this->connect();
+        return $this->conn->query($sql);
+    }
 
-        $select = "Select * from user";
-        $result = $con->query($select);
-
-        if($result->num_rows > 0)
-        {
-            while($row = $result->fetch_assoc())
-            {
-                if($username == $row["username"])
-                {
-                    echo "this username already exists";
-                    return;
-                }
-            }
-        }
-
-        mysqli_query($con,"insert into user values
-                    ('','$name','$email','$username','$pw','$birthday')");
-
+    public function close()
+    {
+        $this->conn->close();
     }
 }
+?>

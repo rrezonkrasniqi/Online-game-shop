@@ -14,7 +14,7 @@ VALUES
     (3, 'journalist');
 
 CREATE TABLE users (
-    id INT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255),
     surname VARCHAR(255),
     username VARCHAR(255) NOT NULL,

@@ -15,8 +15,13 @@
 
 <body>
     <div class="main-container">
-        <h1>Welcome AdminNameHere</h1>
-
+    <?php
+        if (isset($_COOKIE["emri"])) {
+            echo "<h1>Welcome " . $_COOKIE["emri"] . "</h1>";
+        } else {
+            echo "<h1>Welcome</h1>";
+        }
+        ?>
         <div class="options">
             <a href="../../index.php">
                 <div class="option">
