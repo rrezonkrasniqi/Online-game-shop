@@ -28,3 +28,91 @@
         translate:-20px;
     }
 }
+
+
+
+.title-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.custom-button:hover {
+    background-color: #2980b9;
+}
+
+
+
+
+
+
+.game-card-crud {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid #cccccc5d;
+    background-color: #6666662c;
+    transition: 0.3s;
+    align-items: center;
+  }
+  
+
+  .game-card-crud a {
+    font-size: 0px;
+  }
+  
+  .game-card-image-crud {
+    cursor: pointer;
+  }
+  .image-container-crud {
+    display: flex;
+    width: 70px;
+  }
+  
+  .image-container-crud img {
+    width: 100%;
+  }
+  
+  .info-container-crud {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: start;
+    align-items: baseline;
+  }
+  
+ 
+  
+  .button-container-crud {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .title-container-crud {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .delete-btn{
+    background-color: red;
+    border-radius: 7px;
+    border: none;
+    padding: 5px;
+
+  }
+
+  .delete-btn img{
+    width: 30px;
+  }

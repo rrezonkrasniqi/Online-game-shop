@@ -9,19 +9,29 @@
     <link rel="stylesheet" href="/Online-game-shop/public/css/index.css">
     <link rel="stylesheet" href="/Online-game-shop/public/css/game.css">
     <link rel="stylesheet" href="/Online-game-shop/public/css/admin.css">
-
-
 </head>
 
 <body>
+<?php include('../navbar.php'); ?>
+
     <div class="main-container">
-    <?php
-        if (isset($_COOKIE["emri"])) {
-            echo "<h1>Welcome " . $_COOKIE["emri"] . "</h1>";
+        <?php
+
+        if (isset($_SESSION["user"])) {
+       
+            if ($_SESSION["user"]["role"] != 2) {
+                header("Location: ../../index.php");
+                exit();
+            }
+
+            $name = $_SESSION["user"]["name"];
+            echo "<h1>Welcome $name</h1>";
         } else {
-            echo "<h1>Welcome</h1>";
+            header("Location: ../../index.php");
+            exit(); 
         }
         ?>
+
         <div class="options">
             <a href="../../index.php">
                 <div class="option">
@@ -29,22 +39,19 @@
                 </div>
             </a>
             <a href="user-manager.php">
-
-            <div class="option">
-                <h1>Manage Users</h1> <img src="../../images/next.svg" class="continue-icon" alt="">
-            </div>
+                <div class="option">
+                    <h1>Manage Users</h1> <img src="../../images/next.svg" class="continue-icon" alt="">
+                </div>
             </a>
             <a href="news-manager.php">
-
-            <div class="option">
-                <h1>Manage News</h1> <img src="../../images/next.svg" class="continue-icon" alt="">
-            </div>
+                <div class="option">
+                    <h1>Manage News</h1> <img src="../../images/next.svg" class="continue-icon" alt="">
+                </div>
             </a>
             <a href="game-manager.php">
-
-            <div class="option">
-                <h1>Manage Games</h1> <img src="../../images/next.svg" class="continue-icon" alt="">
-            </div>
+                <div class="option">
+                    <h1>Manage Games</h1> <img src="../../images/next.svg" class="continue-icon" alt="">
+                </div>
             </a>
         </div>
     </div>

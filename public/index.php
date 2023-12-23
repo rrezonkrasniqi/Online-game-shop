@@ -17,17 +17,7 @@
 
 
     <div class="main-container">
-    <?php
-
-if (isset($_SESSION["user"])) {
-  if ($_SESSION["user"]["role"] == 2) {
-    echo"<a href=\"\">DASHBOARD</a>";}
-    $username = $_SESSION["user"]["username"];
-    echo "Welcome, $username!";
-}
-?>
-  
-  
+ 
       <div class="container">
         <section class="carousel" aria-label="Gallery">
           <ol class="carousel__viewport">

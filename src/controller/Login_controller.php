@@ -19,12 +19,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
 
-        // Verify the password
         if (password_verify($password, $user["password"])) {
-            // Password is correct, start a session and store user information
             $_SESSION["user"] = array(
+
                 "id" => $user["id"],
                 "username" => $user["username"],
+                "name" => $user["name"],
+                "email"=> $user["email"],
+                "birthday"=> $user["birthday"],
                 "role" => $user["role_id"]
             );
 

@@ -1,3 +1,8 @@
+<?php
+require_once '../../../config/Database.php';
+require_once '../../../src/controller/Game.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,41 +19,46 @@
 </head>
 
 <body>
-    <div class="main-container">
-        <div >
-            <form action="../../../src/controller/Add_Game.php" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" name="name" required><br>
+<?php include('../navbar.php'); ?>
 
-                <label for="subject">Subject:</label>
-                <input type="text" name="subject" required><br>
+    <div class="main-container">   <?php
 
-                <label for="description">Description:</label>
-                <textarea name="description" required rows="10"></textarea><br>
+    if (isset($_SESSION["user"])) {
 
-                <label for="release_date">Release Date:</label>
-                <input type="date" name="release_date" required><br>
-
-                <label for="price">Price:</label>
-                <input type="number" name="price" required><br>
-
-                <label for="platform">Platform:</label>
-                <input type="text" name="platform" required><br>
-
-                <label for="rating">Rating:</label>
-                <input type="number" name="rating" required><br>
-
-                <label for="creator">Creator:</label>
-                <input type="text" name="creator" required><br>
-
-                <label for="image">Image:</label>
-                <input type="text" name="image" required><br>
-
-                <input type="submit" value="Add Game">
-            </form>
+        if ($_SESSION["user"]["role"] != 2) {
+            header("Location: ../../index.php");
+            exit();
+        }
+    } else {
+        header("Location: ../../index.php");
+        exit();
+    }
+    ?>
+        <div class="title-container">
+            <h1>Manage games</h1>
+            <div>
+                <a href="/Online-game-shop/public/view/Admin/add-new-game.php" class="custom-button">Add new game</a>
+            </div>
         </div>
+        <?php
+        $database = new Database("127.0.0.1", "root", "", "shop");
+
+        $sql = "SELECT * FROM Game";
+        $result = $database->query($sql);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $game = new Game($row['game_id'], $row['name'], $row['description'], $row['price'], $row['image'], $row['release_date'], $row['platform'], $row['rating'], $row['creator']);
+                $game->displayCRUD();
+            }
+        } else {
+            echo "No games found in the database.";
+        }
+
+        $database->close();
+        ?>
     </div>
-    
+
 </body>
 
 </html>

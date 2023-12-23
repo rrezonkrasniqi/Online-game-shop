@@ -13,7 +13,7 @@ require_once '../../src/controller/Game.php';
     <link rel="stylesheet" href="/Online-game-shop/public/css/global.css">
     <link rel="stylesheet" href="/Online-game-shop/public/css/index.css">
     <link rel="stylesheet" href="/Online-game-shop/public/css/game.css">
-
+    <script src="js/navbar.js"></script>
 </head>
 
 <body>
@@ -34,7 +34,7 @@ require_once '../../src/controller/Game.php';
 
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    $game = new Game($row['name'], $row['description'], $row['price'], $row['image'], $row['release_date'], $row['platform'], $row['rating'],$row['creator']);
+                    $game = new Game($row['game_id'],$row['name'], $row['description'], $row['price'], $row['image'], $row['release_date'], $row['platform'], $row['rating'],$row['creator']);
                     $game->displayInfo();
                 }
             } else {
