@@ -30,6 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($database->query($sql)) {
         echo "Game updated successfully";
         echo '<br><a href="javascript:history.go(-1)">Go Back</a>';
+        header("Location: ../../public/view/admin/game-manager.php");
+
 
     } else {
         echo "Error updating game";

@@ -24,9 +24,9 @@ require_once '../../src/controller/Game.php';
     <div class="games-container">
 
                 <?php
-                $database = new Database("127.0.0.1", "root", "", "shop");
+                $database = new Database("sql11.freemysqlhosting.net", "sql11672650", "bKL87hly3J", "sql11672650");
 
-                $sql = "SELECT * FROM Game";
+                $sql = "SELECT * FROM game";
                 $result = $database->query($sql);
 
                 if ($result->num_rows > 0) {

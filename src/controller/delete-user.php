@@ -7,20 +7,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
     $id = filter_var($_GET['id'], FILTER_VALIDATE_INT);
 
     if ($id !== false && $id > 0) {
-        $sql = "DELETE FROM game WHERE game_id = $id";
+        $sql = "DELETE FROM users WHERE id = $id";
 
         if ($database->query($sql)) {
-            echo "Game deleted successfully";
+            echo "User deleted successfully";
             echo '<br><a href="javascript:history.go(-1)">Go Back</a>';
-            header("Location: ../../public/view/admin/game-manager.php");
+            header("Location: ../../public/view/admin/user-manager.php");
 
+            
         } else {
-            echo "Error deleting game";
+            echo "Error deleting User";
             echo '<br><a href="javascript:history.go(-1)">Go Back</a>';
 
         }
     } else {
-        echo "Invalid game ID";
+        echo "Invalid user ID";
         echo '<br><a href="javascript:history.go(-1)">Go Back</a>';
 
     }

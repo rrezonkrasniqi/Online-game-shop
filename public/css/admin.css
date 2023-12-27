@@ -113,6 +113,36 @@
 
   }
 
+
+  .edit-btn{
+    background-color: rgb(39, 39, 255);
+    border-radius: 7px;
+    border: none;
+    padding: 5px 20px 5px 20px;
+    
+  }
   .delete-btn img{
     width: 30px;
+  }
+
+  table{
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    border: none;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+
+  }
+
+  tr:hover {background-color: rgba(93, 92, 92, 0.397);}
+
+
+  .action-container{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
   }
