@@ -50,7 +50,7 @@ CREATE TABLE owned_game (
 
 
 CREATE TABLE news (
-    news_id INT PRIMARY KEY,
+    news_id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255),
     news_date DATE,
     journalist_user_id INT,
@@ -59,6 +59,13 @@ CREATE TABLE news (
     FOREIGN KEY (journalist_user_id) REFERENCES users(id)
 );
 
+
+CREATE TABLE contact (
+    report_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    report TEXT,
+    email VARCHAR(255),
+);
 
 
 INSERT INTO Game (name, subject, description, release_date, price, platform, rating, creator, image)

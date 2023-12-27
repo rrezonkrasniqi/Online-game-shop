@@ -52,16 +52,16 @@
     z-index: 3;
 }
 
-form {
+.contact-form {
     display: flex;
     flex-direction: column;
 }
 
-label {
+.contact-label {
     margin-bottom: 8px;
 }
 
-input {
+.contact-input {
     padding: 8px;
     margin-bottom: 16px;
     border: 1px solid #ccc;
@@ -72,19 +72,6 @@ input {
     margin-bottom: 25px;
     resize: none;
     border-radius: 4px;
-}
-
-button {
-    padding: 10px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #2b762f;
 }
 
 .link {
@@ -135,4 +122,18 @@ button:hover {
     .form-container {
         width: 90%;
     }
+}
+
+
+.success-div{
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.success-div img{
+    width: 20%;
 }
