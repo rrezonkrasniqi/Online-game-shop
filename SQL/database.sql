@@ -59,6 +59,11 @@ CREATE TABLE news (
     FOREIGN KEY (journalist_user_id) REFERENCES users(id)
 );
 
+ALTER TABLE news
+ADD newsImage varchar(40);
+
+ALTER TABLE news
+ADD newsShortDesc varchar(30);
 
 CREATE TABLE contact (
     report_id INT AUTO_INCREMENT PRIMARY KEY,
