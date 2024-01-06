@@ -68,6 +68,12 @@ CREATE TABLE contact (
 );
 
 
+CREATE TABLE newsletter (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255)
+);
+
+
 INSERT INTO Game (name, subject, description, release_date, price, platform, rating, creator, image)
 VALUES 
 ('FIFA 2024', 'Sports', NULL, '2023-06-15', 3.99, 'Windows', 0, '', 'http://localhost/Online-game-shop/public/images/Game_Images/fc_24.avif'),
