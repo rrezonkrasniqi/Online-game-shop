@@ -35,6 +35,14 @@
 }
 
 
+
+
+.error-message{
+  color: red;
+  font: italic;
+}
+
+
 .login-logo{
     padding-top: 100px;
     rotate: 325deg;
@@ -61,17 +69,18 @@ form {
 
 
 label {
+  margin-top: 16px;
     margin-bottom: 8px;
 }
 
 input {
     padding: 8px;
-    margin-bottom: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
 button {
+  margin-top: 20px;
     padding: 10px;
     background-color: #4caf50;
     color: white;

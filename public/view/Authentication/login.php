@@ -1,3 +1,44 @@
+<?php
+session_start();
+
+require_once("../../../config/Database.php");
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $username = $_POST["username"];
+  $password = $_POST["password"];
+
+
+  $db = new Database("127.0.0.1", "root", "", "shop");
+
+  if ($db->query("SELECT 1") === FALSE) {
+    die("Connection failed: ");
+  }
+
+  $checkQuery = "SELECT * FROM users WHERE username = '$username'";
+  $result = $db->query($checkQuery);
+
+  if ($result->num_rows > 0) {
+    $user = $result->fetch_assoc();
+
+    if (password_verify($password, $user["password"])) {
+      $_SESSION["user"] = array(
+        "id" => $user["id"],
+        "username" => $user["username"],
+        "name" => $user["name"],
+        "email" => $user["email"],
+        "birthday" => $user["birthday"],
+        "role" => $user["role_id"]
+      );
+
+      header("Location: ../../index.php");
+      exit();
+    }
+  }
+
+  $db->close();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,22 +62,28 @@
     </div>
     <div class="right-side">
       <div class="form-container">
-        <form id="loginForm" action="../../../src/controller/Login_controller.php" method="post">
+        <form id="loginForm" action="login.php" method="post" onsubmit="return saveAndRedirect()">
           <h1>Login</h1>
           <label for="username">Username:</label>
           <input type="text" id="username" name="username" required />
-
+          <?php if (isset($username) && $result->num_rows === 0) : ?>
+            <span class="error-message">User not found.</span>
+          <?php endif; ?>
           <label for="password">Password: </label>
-          <input type="password" id="" name="password" required />
-          <input type="submit" name="submit" id="submit">
+          <input type="password" id="password" name="password" required />
+          <?php if (isset($username) && $result->num_rows > 0 && !password_verify($password, $user["password"])) : ?>
+            <span class="error-message">Incorrect password.</span>
+          <?php endif; ?>
+          <input type="submit" name="submit" value="Login" id="submit">
           <div class="under-links">
-            <span> <a href="signup.php" class="link">Sign Up</a></span>
+            <span><a href="signup.php" class="link">Sign Up</a></span>
           </div>
         </form>
       </div>
       <div class="right-line"></div>
     </div>
   </div>
+</body>
 
   <div class="backwrap gradient">
     <div class="back-shapes">
