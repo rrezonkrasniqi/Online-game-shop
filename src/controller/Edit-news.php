@@ -7,20 +7,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['id'];
     $title = $_POST['title'];
     $date = $_POST['date'];
-    $journalistId = $_POST['journalist'];
     $text = $_POST['text'];
     $image = $_POST['image'];
-    $imageOld = $_POST['image-old'];
     $shortDcs = $_POST['short-dcs'];
 
     $sql = "UPDATE news SET
             title = '$title',
             news_date = '$date',
-            journalist_user_id = '$journalistId',
             news_text = '$text',
             image = '$image',
-            newsImage = '$imageOld',
-            newShortDesc = '$shortDcs'";
+            newsShortDesc = '$shortDcs'";
 
     if ($database->query($sql)) {
         echo "News updated successfully";

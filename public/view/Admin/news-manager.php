@@ -25,7 +25,7 @@ require_once '../../../src/controller/News.php';
 
     if (isset($_SESSION["user"])) {
 
-        if ($_SESSION["user"]["role"] != 2) {
+        if ($_SESSION["user"]["role"] != 2 && $_SESSION["user"]["role"] != 3) {
             header("Location: ../../index.php");
             exit();
         }

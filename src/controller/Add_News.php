@@ -11,11 +11,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $image = $_POST['news-image'];
     $desc = $_POST['short-dsc'];
 
-    $sql = "INSERT INTO news (title, news_date, journalist_user_id, news_text,image ,newsImage,newsShortDesc) 
-            VALUES ('$newsTitle','$date','$jrUserID','$newsText','$image','$image','$desc')";
+    $sql = "INSERT INTO news (title, news_date, journalist_user_id, news_text, image, newsShortDesc) 
+            VALUES ('$newsTitle', '$date', '$jrUserID', '$newsText', '$image', '$desc')";
 
     $output = "";
-    $database->query($sql) ? $output = "Game added successfully" : $output = "Error";
+    if ($database->query($sql)) {
+        $output = "News added successfully";
+        header("Location: " . $_SERVER["HTTP_REFERER"]);
+        exit();
+    } else {
+        $output = "Error";
+    }
+
     echo $output;
 
     $database->close();

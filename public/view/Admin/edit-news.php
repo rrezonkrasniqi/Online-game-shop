@@ -27,10 +27,9 @@ require_once '../../../src/controller/News.php';
         {
             header("Location: ../../index.php");
             exit(); 
-            return;
         }
         
-        if ($_SESSION["user"]["role"] != 2) {
+        if ($_SESSION["user"]["role"] != 2 && $_SESSION["user"]["role"] != 3) {
             header("Location: ../../index.php");
             exit();
         }
@@ -56,20 +55,13 @@ require_once '../../../src/controller/News.php';
                     <label for="date">News Date:</label>
                     <input type="date" name="date" value="<?php echo $row['news_date']; ?>" required><br>
 
-                    <label for="journalist-id">Description:</label>
-                    <input type="number" name="journalist-id" value="<?php echo $row['journalist_user_id']; ?>" required><br>
-
                     <label for="text">Text:</label>
                     <textarea name="text" required rows="25"><?php echo $row['news_text']; ?></textarea><br>
                     
                     <label for="image">Image:</label>
                     <input type="text" name="image" value="<?php echo $row['image']; ?>" required><br>
 
-                    <!-- The code downbelow must be removed-->
-                    <label for="image-old">Image old:</label>
-                    <input type="text" name="image-old" value="<?php echo $row['newsImage']; ?>" required><br>
-
-                    <label for="short-dcs">Image:</label>
+                    <label for="short-dcs">Description:</label>
                     <input type="text" name="short-dcs" value="<?php echo $row['newsShortDesc']; ?>" required><br>
 
                     <input type="submit" value="Update News">

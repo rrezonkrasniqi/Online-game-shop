@@ -23,7 +23,7 @@
 
         if (isset($_SESSION["user"])) {
        
-            if ($_SESSION["user"]["role"] != 2) {
+            if ($_SESSION["user"]["role"] != 2 && $_SESSION["user"]["role"] != 3) {
                 header("Location: ../../index.php");
                 exit();
             }
@@ -36,22 +36,22 @@
         }
         ?>
             <form action="../../../src/controller/Add_News.php" method="POST">
-                <label for="news-title">Author:</label>
+                <label for="news-title">Title</label>
                 <input type="text" name="news-title" required><br>
 
-                <label for="news-date">Subject:</label>
+                <label for="news-date">Date</label>
                 <input type="date" name="news-date" required><br>
 
-                <label for="journalist_user_id">Subject:</label>
-                <input type="text" name="journalist_user_id" required><br>
+                <label for="journalist_user_id">Journalist</label>
+<input type="text" name="journalist_user_id" value="<?php echo $_SESSION["user"]["id"]; ?>" readonly><br>
 
-                <label for="news-text">Description:</label>
+                <label for="news-text">Text</label>
                 <textarea name="news-text" required rows="25"></textarea><br>
 
-                <label for="short-dsc">Subject:</label>
+                <label for="short-dsc">Description:</label>
                 <input type="text" name="short-dsc" required><br>
 
-                <label for="news-image">Subject:</label>
+                <label for="news-image">Image URL:</label>
                 <input type="text" name="news-image" required><br>
 
                 <input type="submit" value="Add News">

@@ -19,7 +19,7 @@
                         echo "<a href=\"/Online-game-shop/public/view/Admin/home.php\" class=\"panel-link\">Admin Panel</a>";
                     }
                     if ($_SESSION["user"]["role"] == 3) {
-                        echo "<a href=\"/Online-game-shop/public/view/Journalist/home.php\" class=\"panel-link\">Journalist Panel</a>";
+                        echo "<a href=\"/Online-game-shop/public/view/Admin/journalist-panel.php\" class=\"panel-link\">Journalist Panel</a>";
                     }
                     $username = $_SESSION["user"]["username"];
                     echo "<a href=\"/Online-game-shop/src/controller/session_destroyer.php\">Logout</a>";
