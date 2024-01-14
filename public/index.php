@@ -1,3 +1,10 @@
+<?php
+require_once '../config/Database.php';
+require_once '../src/controller/Game.php';
+require_once '../src/controller/News.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,7 +17,6 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
    
   </head>
-    <script src="js/navbar.js"></script>
 
   <body>
   <?php include('view/navbar.php'); ?>
@@ -51,16 +57,34 @@
       <!-- For Sale section -->
       <section>
         <div class="section-title title">
-          <p>Latest</p>
+          <p>Lattest</p>
           <div>
-            <a href="/Games/game.html">
+            <a href="/Online-game-shop/public/view/games.php">
             <button class="more-button">
               More <img src="images/arrow.svg" class="arrow" />
             </button>
             </a>
           </div>
         </div>
-        <section id="latest-section"> </section>
+        <section class="latest-container">
+        <?php
+            $database = new Database("127.0.0.1", "root", "", "shop");
+
+            $sql = "SELECT * FROM game WHERE game_id IN (4,6,9)";
+            $result = $database->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $game = new Game($row['game_id'],$row['name'], $row['description'], $row['price'], $row['image'], $row['release_date'], $row['platform'], $row['rating'],$row['creator']);
+                        $game->display();
+                    }
+                } else {
+                    echo "No games found in the database.";
+                }
+
+                $database->close();
+                ?>
+      </section>
       </section>
 
       <!-- news -->
@@ -68,7 +92,7 @@
         <div class="section-title title">
           <p>News</p>
           <div>
-            <a href="/News/news.html">
+            <a href="/Online-game-shop/public/view/news.php">
 
               <button class="more-button">
                 More <img src="images/arrow.svg" class="arrow" />
@@ -77,49 +101,24 @@
           </div>
         </div>
         <div class="news-container">
-          <div class="news-card">
-            <div class="news-image-container">
-              <a href="/News/gtaVI.html">
-                <img
-                  src="images/Game_Images/gtaVI.png"
-                  alt="Game Image"
-                  class="game-card-image"
-                  class="news-cover"
-                />
-              </a>
-            </div>
-            <div class="news-info-container">
-              <p class="game-name">GTA 6: Everything we know so far</p>
-              <p class="game-description">
-                Your biggest Grand Theft Auto 6 questions answered on the GTA 6
-                leak, setting, location, characters, and more
-              </p>
-              <a href="/News/gtaVI.html">
-                <button class="read-more-btn">Read more</button>
-              </a>
-            </div>
-          </div>
-          <div class="news-card">
-            <div class="news-image-container">
-              <img
-                src="images/Game_Images/fortnite-cover.avif"
-                alt="Game Image"
-                class="game-card-image"
-                class="news-cover"
-              />
-            </div>
-            <div class="news-info-container">
-              <p class="news-name">Fortnite brings no "ZERO BUILD" mode</p>
-              <p class="news-description">
-                As more players left the game and other advanced at boulding
-                fortnite decided to create a mode without builds and they
-                promise the will bring more to this ...
-              </p>
-              <a href="/News/fortnite-no-build.html">
-                <button class="read-more-btn">Read more</button>
-              </a>
-            </div>
-          </div>
+        <?php
+            $database = new Database("127.0.0.1", "root", "", "shop");
+                $sql = "SELECT * FROM news where news_id IN (5,4)";
+                $result = $database->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) 
+        {
+            $news = new News($row['news_id'],$row['title'],$row['news_date'],$row['journalist_user_id'],$row['image'],$row['news_text'],$row['newsShortDesc']);
+            $news->displayIndexNews();
+        }
+
+                } else {
+                    echo "No news found in the database.";
+                }
+
+                $database->close();
+                ?>
         </div>
       </section>
 
@@ -128,14 +127,33 @@
         <div class="section-title title">
           <p>For Sale</p>
           <div>
-            <a href="/Games/game.html">
+                       <a href="/Online-game-shop/public/view/games.php">
+
             <button class="more-button">
               More <img src="images/arrow.svg" class="arrow" />
             </button>
             </a>
           </div>
         </div>
-        <section id="for-sale-section"> </section>
+        <section class="latest-container">
+        <?php
+            $database = new Database("127.0.0.1", "root", "", "shop");
+
+            $sql = "SELECT * FROM game WHERE game_id IN (1,6,3)";
+            $result = $database->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $game = new Game($row['game_id'],$row['name'], $row['description'], $row['price'], $row['image'], $row['release_date'], $row['platform'], $row['rating'],$row['creator']);
+                        $game->display();
+                    }
+                } else {
+                    echo "No games found in the database.";
+                }
+
+                $database->close();
+                ?>
+      </section>
       </section>
 
       <!-- Recomended -->
@@ -143,47 +161,67 @@
         <div class="section-title title">
           <p>Recomended</p>
           <div>
-            <a href="/Games/game.html">
+                       <a href="/Online-game-shop/public/view/games.php">
+
             <button class="more-button">
               More <img src="images/arrow.svg" class="arrow" />
             </button>
             </a>
           </div>
         </div>
-        <section id="recommended-section"> </section>
+        <section class="latest-container">
+        <?php
+            $database = new Database("127.0.0.1", "root", "", "shop");
+
+            $sql = "SELECT * FROM game WHERE game_id IN (11,15,18)";
+            $result = $database->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $game = new Game($row['game_id'],$row['name'], $row['description'], $row['price'], $row['image'], $row['release_date'], $row['platform'], $row['rating'],$row['creator']);
+                        $game->display();
+                    }
+                } else {
+                    echo "No games found in the database.";
+                }
+
+                $database->close();
+                ?>
       </section>
-
+      </section>
       <!-- Free -->
-    <section >
-      <div class="section-title title">
-        <p>Free</p>
-        <div>
-          <a href="/Games/game.html">
-          <button class="more-button">
-            More <img src="images/arrow.svg" class="arrow" />
-          </button></a>
+      <section>
+        <div class="section-title title">
+          <p>Free</p>
+          <div>
+                       <a href="/Online-game-shop/public/view/games.php">
+
+            <button class="more-button">
+              More <img src="images/arrow.svg" class="arrow" />
+            </button>
+            </a>
+          </div>
         </div>
-      </div>
-      <section id="free-section"></section>
-    </section>
+        <section class="latest-container">
+        <?php
+            $database = new Database("127.0.0.1", "root", "", "shop");
 
-    <script src="js/GameCard.js"></script>
+            $sql = "SELECT * FROM game WHERE game_id IN (2,20,4)";
+            $result = $database->query($sql);
 
-      <!-- <script>
-        let userDataJSON = localStorage.getItem('userData');
-    
-        if (userDataJSON) {
-          let userData = JSON.parse(userDataJSON);
-    
-          document.write("Name: " + userData.name + "<br>");
-          document.write("Email: " + userData.email + "<br>");
-          document.write("Username: " + userData.username + "<br>");
-          document.write("Password: " + userData.password + "<br>");
-          document.write("Birthday: " + userData.birthday + "<br>");
-        } else {
-          document.write("No user data found in local storage.");
-        }
-      </script> -->
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $game = new Game($row['game_id'],$row['name'], $row['description'], $row['price'], $row['image'], $row['release_date'], $row['platform'], $row['rating'],$row['creator']);
+                        $game->display();
+                    }
+                } else {
+                    echo "No games found in the database.";
+                }
+
+                $database->close();
+                ?>
+      </section>
+      </section>
 
       <div class="backwrap gradient">
         <div class="back-shapes">
@@ -442,65 +480,9 @@
         </div>
       </div>
     </div>
-    <div class="footer-color">
-      <div class="main-container">
-        <footer>
-          <div>
-            <img src="images/logo.png" alt="" />
-            <h1>Online Game's Shop</h1>
-            <h3>Rrezon & Enes Solutions TM</h3>
-            <h4>Prizren 20000</h4>
-            <h4>Rruga Tirana, B11</h4>
-          </div>
-          <div class="footer-links">
-            <div class="footer-link">
-              <a href="home.html">Home</a>
-            </div>
-            <div class="footer-link">
-              <a href="/News/news.html">News</a>
-            </div>
-            <div class="footer-link">
-              <a href="ContactUs/contactUs.html">Contact</a>
-            </div>
-            <div class="footer-link">
-              <a href="About/About.html">About</a>
-            </div>
-            <div class="footer-link">
-              <a href="/Games/game.html">Latest</a>
-            </div>
-            <div class="footer-link">
-              <a href="/Games/game.html">Sale</a>
-            </div>
-            <div class="footer-link">
-              <a href="/Games/game.html">Recommended</a>
-            </div>
-          </div>
-          <div class="newsletter" id="newsletter">
-            <form action="" method="post">
-              <h1>Subscribe to our newsletter</h1>
-              <label for="email">Email</label>
-              <div class="input-container">
-                <input
-                  type="email"
-                  id="email-last"
-                  name="email"
-                  required
-                  class="email-input"
-                />
-                <button
-                  type="submit"
-                  class="subscribe-button"
-                  form="my-form"
-                  onclick="subToNewsLetter()"
-                >
-                  Subscribe
-                </button>
+    <?php include('./view/footer.php'); ?>
+
               </div>
-            </form>
-          </div>
-        </footer>
-      </div>
-    </div>
     <script src="js/index.js"></script>
     <script src="js/global.js"></script>
   </body>

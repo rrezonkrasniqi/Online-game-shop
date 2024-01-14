@@ -27,6 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "name" => $user["name"],
         "email" => $user["email"],
         "birthday" => $user["birthday"],
+        "balance" => $user["balance"],
+
         "role" => $user["role_id"]
       );
 

@@ -1,4 +1,5 @@
-<!-- Navbar -->
+<script src="../js/navbar.js"></script>
+
 <nav class="navbar">
     <div class="main-container">
         <div class="topnav" id="myTopnav">
@@ -9,12 +10,27 @@
             <a href="/Online-game-shop/public/view/contact.php">Contact</a>
             <a href="/Online-game-shop/public/view/About.php">About</a>
             <a href="/Online-game-shop/public/view/games.php">Games</a>
-
-            <div class="user-actions">
-                <?php    
+            <?php    
                 session_start();
 
+            if (isset($_SESSION["user"])) {
+                    if ($_SESSION["user"]["role"] == 1) {
+                        echo "<a href=\"/Online-game-shop/public/view/owned-games.php\" >My Games</a>";
+             
+                    }}
+                    
+
+             echo "<div class=\"user-actions\">";
+              
+
                 if (isset($_SESSION["user"])) {
+                    if ($_SESSION["user"]["role"] == 1) {
+                        echo $_SESSION["user"]["balance"];
+                        echo"$";
+                        echo "<a href=\"/Online-game-shop/public/view/cart.php\" class=\"cart-link\">
+                       <img src=\"http://localhost/Online-game-shop/public/images/cart.svg\" class=\"cart\" /></a>";
+
+                    }
                     if ($_SESSION["user"]["role"] == 2) {
                         echo "<a href=\"/Online-game-shop/public/view/Admin/home.php\" class=\"panel-link\">Admin Panel</a>";
                     }

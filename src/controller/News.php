@@ -92,4 +92,24 @@ class News
         echo "</div>";
         echo "</div>";
     }
+
+
+
+    public function displayIndexNews()
+    {
+        echo "<div class=\"news-card\">";
+        echo "<div class=\"news-image-container\">";
+        echo "<a href=\"article-info.php?id={$this->news_id}\">";
+        echo "<img src=\"{$this->image}\" alt=\"news-cover\" class=\"news-cover game-card-image\">";
+        echo "</a>";
+        echo "</div>";
+        echo "<div class=\"news-info-container\">";
+        echo "<p class=\"game-name\">{$this->title}</p>";
+        echo "<p class=\"game-description\">{$this->newsShortDesc}</p>";
+        echo "<a href=\"article-info.php?id={$this->news_id}\"><button class=\"read-more-btn\">Read more</button></a>";
+        echo "</div>";
+        echo "</div>";
+
+   
+    }
 }

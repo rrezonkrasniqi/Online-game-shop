@@ -55,7 +55,7 @@ require_once '../../../src/controller/News.php';
 
         while ($row = $result->fetch_assoc()) 
         {
-            $news = new News($row['news_id'],$row['title'],$row['news_date'],$row['journalist_user_id'],$row['news_text'],$row['newsImage'],$row['newsShortDesc']);
+            $news = new News($row['news_id'],$row['title'],$row['news_date'],$row['journalist_user_id'],$row['news_text'],$row['image'],$row['newsShortDesc']);
             $news->displayNewsCRUD();
         }
 

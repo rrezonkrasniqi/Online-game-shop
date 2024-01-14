@@ -16,7 +16,6 @@ VALUES
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255),
-    surname VARCHAR(255),
     username VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
@@ -59,8 +58,7 @@ CREATE TABLE news (
     FOREIGN KEY (journalist_user_id) REFERENCES users(id)
 );
 
-ALTER TABLE news
-ADD newsImage varchar(40);
+
 
 ALTER TABLE news
 ADD newsShortDesc varchar(30);
@@ -78,6 +76,20 @@ CREATE TABLE newsletter (
     email VARCHAR(255)
 );
 
+
+
+INSERT INTO users (name, username, email, password , birthday, role_id)
+VALUES
+    ('User1', 'user1', 'user1@example.com', '$2y$10$efGFV5zpH3ixaR4H.OEPd.8LK/4yg8adFWW9g0GMLU2PzQyly.6Zy','1990-01-01',  1),
+    ('User2', 'user2', 'user2@example.com', '$2y$10$lG7dH7VulifRnCX.XYS7mOl9bij8747kpmpbTxKxluu1kReeprs6W', '1995-05-15', 2),
+    ('User3', 'admin', 'admin@example.com', '$2y$10$lG7dH7VulifRnCX.XYS7mOl9bij8747kpmpbTxKxluu1kReeprs6W', '1985-12-10', 2),
+    ('Journalist1', 'gazetari1', 'gazetari1@example.com', '$2y$10$c.lHAAuLAZN/BsSr4MkyPuMDVniSsTpHDh/NAw1KJYMLQX7t/QQaO', '1988-07-20', 3),
+    ('Journalist2', 'gazetari2', 'gazetari2@example.com', '$2y$10$c.lHAAuLAZN/BsSr4MkyPuMDVniSsTpHDh/NAw1KJYMLQX7t/QQaO', '1992-03-25', 3),
+    ('Journalist3', 'gazetari3', 'gazetari3@example.com', '$2y$10$c.lHAAuLAZN/BsSr4MkyPuMDVniSsTpHDh/NAw1KJYMLQX7t/QQaO', '1975-09-05', 3);
+
+
+UPDATE users
+SET balance = 100;
 
 INSERT INTO Game (name, subject, description, release_date, price, platform, rating, creator, image)
 VALUES 
@@ -108,3 +120,17 @@ VALUES
 ('Star Wars Jedi: Fallen Order', 'Action-Adventure', NULL, '2019-11-15', 49.99, 'Xbox', 0, '', 'http://localhost/Online-game-shop/public/images/Game_Images/star-wars.jpg'),
 ('Subnautica', 'Survival', NULL, '2018-01-23', 24.99, 'Windows', 0, '', 'http://localhost/Online-game-shop/public/images/Game_Images/subnautica.jpeg'),
 ('Mortal Kombat 11', 'Fighting', NULL, '2019-04-23', 49.99, 'PlayStation', 0, '', 'http://localhost/Online-game-shop/public/images/Game_Images/mortal.jpg');
+
+
+
+INSERT INTO news (title, news_date, journalist_user_id, news_text, image) VALUES 
+('New Game Release: Cyber Odyssey', '2024-01-14', 4, 'Experience the futuristic world of Cyber Odyssey in this thrilling new game.', 'http://localhost/Online-game-shop/public/images/Game_Images/fortnite-cover.jpg'),
+('Exclusive Interview with Game Developer', '2024-01-15', 4, 'Get insights from the game developer about the challenges and inspirations behind the latest blockbuster.', 'http://localhost/Online-game-shop/public/images/Game_Images/fortnite-cover.jpg'),
+('In-depth Review: Galactic Conquest', '2024-01-16', 4, 'Embark on an epic journey through space with Galactic Conquest. Read our detailed review now!', 'http://localhost/Online-game-shop/public/images/Game_Images/fortnite-cover.jpg'),
+('Breaking News: Esports Championship', '2024-01-17', 4, 'Stay updated on the latest esports championship with intense battles and skilled players.', 'http://localhost/Online-game-shop/public/images/Game_Images/fortnite-cover.jpg'),
+('Special Feature: Virtual Reality Gaming', '2024-01-18', 4, 'Explore the future of gaming with our special feature on virtual reality and its impact on the gaming industry.', 'http://localhost/Online-game-shop/public/images/Game_Images/fortnite-cover.jpg'),
+('Game Tips and Tricks: Mastering the Levels', '2024-01-19', 4, 'Level up your gaming skills with our expert tips and tricks for conquering challenging game levels.', 'http://localhost/Online-game-shop/public/images/Game_Images/fortnite-cover.jpg'),
+('Rumors and Speculations: Next-Gen Console', '2024-01-20', 4, 'Uncover the latest rumors and speculations surrounding the upcoming next-gen gaming console.', 'http://localhost/Online-game-shop/public/images/Game_Images/fortnite-cover.jpg'),
+('Behind the Scenes: Game Studio Tour', '2024-01-21', 4, 'Take a behind-the-scenes tour of a renowned game studio and discover the magic behind game development.', 'http://localhost/Online-game-shop/public/images/Game_Images/fortnite-cover.jpg'),
+('Top 10 Indie Games to Watch', '2024-01-22', 4, 'Explore the world of indie games with our curated list of top 10 indie games that are making waves in the gaming community.', 'http://localhost/Online-game-shop/public/images/Game_Images/fortnite-cover.jpg'),
+('Game Awards: Celebrating Excellence', '2024-01-23', 4, 'Join us in celebrating excellence in gaming as we highlight the winners of this years prestigious game awards.', 'http://localhost/Online-game-shop/public/images/Game_Images/fortnite-cover.jpg');
