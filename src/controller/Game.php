@@ -91,7 +91,7 @@ class Game
         echo "<span class=\"game-rating\">$this->rating / 5</span>";
         echo "</div>";
         echo "<div class=\"game-info-bottom\">";
-        echo "<span class=\"game-price-sale\">{$this->price}</span>";
+        echo "<span class=\"game-price-sale\">{$this->price}$</span>";
         echo "<div class=\"button-container\">";
         echo "<a href=\"/Online-game-shop/src/controller/add-to-cart.php?id={$this->id}\">";
         echo "<button class=\"cart-btn\">Add to cart</button></a>";

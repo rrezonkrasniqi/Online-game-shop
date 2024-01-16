@@ -86,7 +86,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <link rel="stylesheet" href="/Online-game-shop/public/css/signup.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  <script src="../../js/signup.js"></script>
 </head>
 
 <body>
@@ -96,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     <div class="right-side">
       <div class="form-container">
-        <form id="signupForm" action="signup.php" method="post" autocomplete="off">
+        <form id="signupForm" action="signup.php" method="post" autocomplete="off"  onsubmit="return saveAndRedirect()">
           <h1>Sign Up</h1>
 
           <label for="name">Name:</label>
@@ -135,7 +134,49 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="right-line"></div>
   </div>
   </div>
+  <script>
+function saveAndRedirect() {
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+  var birthday = document.getElementById("birthday").value;
 
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]/;
+
+
+  
+  function isPasswordValid() {
+        var passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d).{7,}$/;
+        return passwordRegex.test(password);
+      }
+
+      if (isPasswordValid == false) {
+        alert("Password must ");
+
+      } 
+      console.log(isPasswordValid())
+
+
+  var currentDate = new Date();
+  var userBirthday = new Date(birthday);
+  var ageDiff = currentDate.getFullYear() - userBirthday.getFullYear();
+  if (ageDiff < 9) {
+    alert("You must be at least 9 years old to sign up.");
+    return false;
+  }
+
+  if (name === "" || email === "" || username === "" || password === "") {
+    alert("Please fill the entire form");
+    return false;
+  } else if (!emailRegex.test(email)) {
+    alert("Please write an email");
+    return false;
+  }
+
+  return true;
+}
+</script>
   <div class="backwrap gradient">
     <div class="back-shapes">
       <span class="floating circle" style="

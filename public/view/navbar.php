@@ -25,7 +25,7 @@
 
                 if (isset($_SESSION["user"])) {
                     if ($_SESSION["user"]["role"] == 1) {
-                        echo $_SESSION["user"]["balance"];
+                        echo number_format($_SESSION["user"]["balance"], 2);
                         echo"$";
                         echo "<a href=\"/Online-game-shop/public/view/cart.php\" class=\"cart-link\">
                        <img src=\"http://localhost/Online-game-shop/public/images/cart.svg\" class=\"cart\" /></a>";

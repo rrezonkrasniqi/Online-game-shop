@@ -7,7 +7,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $username = $_POST["username"];
   $password = $_POST["password"];
 
-
   $db = new Database("127.0.0.1", "root", "", "shop");
 
   if ($db->query("SELECT 1") === FALSE) {
@@ -28,7 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "email" => $user["email"],
         "birthday" => $user["birthday"],
         "balance" => $user["balance"],
-
         "role" => $user["role_id"]
       );
 
@@ -53,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <link rel="stylesheet" href="/Online-game-shop/public/css/login.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  <script src="../../js/login.js"></script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
@@ -85,7 +83,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="right-line"></div>
     </div>
   </div>
+
+  <script>
+    function saveAndRedirect() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      console.log(username);
+
+      function isPasswordValid() {
+        var passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d).{7,}$/;
+        return passwordRegex.test(password);
+      }
+      console.log(isPasswordValid())
+
+      if (isPasswordValid() && username !== "") {
+
+      } else {
+        alert("Please enter both username and password.");
+        return false;
+      }
+    }
+  </script>
 </body>
+
+
+
+
 
   <div class="backwrap gradient">
     <div class="back-shapes">
@@ -244,7 +267,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
   </div>
 
-  <script src="login.js">
 
   </script>
 </body>

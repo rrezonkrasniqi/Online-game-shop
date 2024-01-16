@@ -30,19 +30,6 @@ function saveAndRedirect() {
       alert ("Your email is wrong")
   }
   else{
-    var userData = {
-      name: name,
-      email: email,
-      username: username,
-      password: password,
-      birthday: birthday
-    }
-    var userDataJSON = JSON.stringify(userData);
-
-    localStorage.setItem('userData', userDataJSON);
-
-    alert("Sign up successful!");
-    window.location.href = "../index.html";
 
 
   }
