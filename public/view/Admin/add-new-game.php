@@ -35,7 +35,7 @@
             exit(); 
         }
         ?>
-            <form action="../../../src/controller/Add_Game.php" method="POST">
+<form action="../../../src/controller/Add_Game.php" method="POST" enctype="multipart/form-data">
                 <label for="name">Name:</label>
                 <input type="text" name="name" required><br>
 
@@ -61,7 +61,7 @@
                 <input type="text" name="creator" required><br>
 
                 <label for="image">Image:</label>
-                <input type="text" name="image" required><br>
+                <input type="file" id="fileInput" name="image" accept="image/*">
 
                 <input type="submit" value="Add Game">
             </form>

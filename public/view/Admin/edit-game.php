@@ -47,7 +47,7 @@ require_once '../../../src/controller/Game.php';
 
             if ($result && $row = $result->fetch_assoc()) {
             ?>
-                <form action="../../../src/controller/Edit-game.php" method="POST">
+<form action="../../../src/controller/Edit-Game.php" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="id" value="<?php echo $gameId; ?>">
                     
                     <label for="name">Name:</label>
@@ -75,7 +75,8 @@ require_once '../../../src/controller/Game.php';
                     <input type="text" name="creator" value="<?php echo $row['creator']; ?>" required><br>
 
                     <label for="image">Image:</label>
-                    <input type="text" name="image" value="<?php echo $row['image']; ?>" required><br>
+                    <input type="file" id="fileInput" name="image" accept="image/*" value="<?php echo $row['image']; ?>" required><br>
+    
 
                     <input type="submit" value="Update Game">
                 </form>

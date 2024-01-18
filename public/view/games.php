@@ -1,6 +1,9 @@
 <?php
 require_once '../../config/Database.php';
 require_once '../../src/controller/Game.php';
+
+$searchTerm = isset($_GET['search']) ? $_GET['search'] : '';
+
 ?>
 
 <!DOCTYPE html>
@@ -17,31 +20,36 @@ require_once '../../src/controller/Game.php';
 </head>
 
 <body>
-<?php include('navbar.php'); ?>
+    <?php include('navbar.php'); ?>
 
+    <form action="" method="get">
+        <div class="main-container search-container">
+            <input type="text" name="search" id="searchInput" placeholder="Search for games" value="<?php echo $searchTerm; ?>" />
+            <button type="submit" class="search-btn">Search</button>
+        </div>
+    </form>
 
     <div class="main-container">
-    <div class="games-container">
+        <div class="games-container">
 
-                <?php
+            <?php
             $database = new Database("127.0.0.1", "root", "", "shop");
 
-                // $database = new Database("sql11.freemysqlhosting.net", "sql11672650", "bKL87hly3J", "sql11672650");
 
-                $sql = "SELECT * FROM game";
-                $result = $database->query($sql);
+            $sql = "SELECT * FROM game WHERE name LIKE '%$searchTerm%'";
+            $result = $database->query($sql);
 
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        $game = new Game($row['game_id'],$row['name'], $row['description'], $row['price'], $row['image'], $row['release_date'], $row['platform'], $row['rating'],$row['creator']);
-                        $game->display();
-                    }
-                } else {
-                    echo "No games found in the database.";
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $game = new Game($row['game_id'], $row['name'], $row['description'], $row['price'], $row['image'], $row['release_date'], $row['platform'], $row['rating'], $row['creator']);
+                    $game->display();
                 }
+            } else {
+                echo "No games found in the database.";
+            }
 
-                $database->close();
-                ?>
+            $database->close();
+            ?>
         </div>
     </div>
     <?php include('footer.php'); ?>

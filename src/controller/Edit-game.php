@@ -13,7 +13,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $platform = $_POST['platform'];
     $rating = $_POST['rating'];
     $creator = $_POST['creator'];
-    $image = $_POST['image'];
+
+    // Image handling
+    if (isset($_FILES['image']) && !empty($_FILES['image']['name'])) {
+        $targetDir = "../uploads/";
+        $fileName = basename($_FILES["image"]["name"]);
+        $targetFilePath = $targetDir . $fileName;
+        $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
+        $fileNameWithUrl="http://localhost/Online-game-shop/src/uploads/".$fileName;
+
+        $allowTypes = array('jpg', 'jpeg', 'png', 'gif');
+        if (in_array($fileType, $allowTypes)) {
+            if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath)) {
+                $image = $targetFilePath;
+            } else {
+                echo "Error uploading file";
+                echo '<br><a href="javascript:history.go(-1)">Go Back</a>';
+                exit;
+            }
+        } else {
+            echo "Invalid file type. Allowed types: jpg, jpeg, png, gif";
+            echo '<br><a href="javascript:history.go(-1)">Go Back</a>';
+            exit;
+        }
+    } else {
+        $fileNameWithUrl = $_POST['image'];
+    }
 
     $sql = "UPDATE game SET 
             name = '$name',
@@ -24,25 +49,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             platform = '$platform',
             rating = '$rating',
             creator = '$creator',
-            image = '$image'
+            image = '$fileNameWithUrl'
             WHERE game_id = $id";
 
     if ($database->query($sql)) {
         echo "Game updated successfully";
         echo '<br><a href="javascript:history.go(-1)">Go Back</a>';
         header("Location: ../../public/view/admin/game-manager.php");
-
-
     } else {
         echo "Error updating game";
         echo '<br><a href="javascript:history.go(-1)">Go Back</a>';
-
     }
 
     $database->close();
 } else {
     echo "Invalid request";
     echo '<br><a href="javascript:history.go(-1)">Go Back</a>';
-
 }
 ?>
