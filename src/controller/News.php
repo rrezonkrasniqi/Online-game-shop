@@ -106,7 +106,7 @@ class News
         echo "<div class=\"news-info-container\">";
         echo "<p class=\"game-name\">{$this->title}</p>";
         echo "<p class=\"game-description\">{$this->newsShortDesc}</p>";
-        echo "<a href=\"article-info.php?id={$this->news_id}\"><button class=\"read-more-btn\">Read more</button></a>";
+        echo "<a href=\"view\article-info.php?id={$this->news_id}\"><button class=\"read-more-btn\">Read more</button></a>";
         echo "</div>";
         echo "</div>";
 

@@ -38,6 +38,11 @@
                     <h1>Go to main page</h1> <img src="../../images/next.svg" class="continue-icon" alt="">
                 </div>
             </a>
+            <a href="contact-viewer.php">
+                <div class="option">
+                    <h1>Manage Messages</h1> <img src="../../images/next.svg" class="continue-icon" alt="">
+                </div>
+            </a>
             <a href="user-manager.php">
                 <div class="option">
                     <h1>Manage Users</h1> <img src="../../images/next.svg" class="continue-icon" alt="">

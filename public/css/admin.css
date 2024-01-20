@@ -146,3 +146,30 @@
     flex-direction: row;
     gap: 20px;
   }
+
+  .contact-card{
+    margin-top: 30px;
+
+
+      border-radius: 15px;
+      display: flex;
+      flex-direction: row;
+      border: 2px solid #cccccc5d;
+      background-color: #6666662c;
+      transition: 0.3s;
+    }
+    
+    .contact-card:hover {
+      background-color: #63636378;
+      border: 2px solid #cccccc9a;
+    }
+  
+
+    @media screen and (max-width: 630px) {
+      .contact-card {
+            margin-top: 30px;
+
+            margin-left: 20px;
+            margin-right: 20px;       
+      }
+    }
