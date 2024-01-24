@@ -12,24 +12,17 @@
             <a href="/Online-game-shop/public/view/games.php">Games</a>
             <?php    
                 session_start();
-
             if (isset($_SESSION["user"])) {
                     if ($_SESSION["user"]["role"] == 1) {
                         echo "<a href=\"/Online-game-shop/public/view/owned-games.php\" >My Games</a>";
-             
                     }}
-                    
-
              echo "<div class=\"user-actions\">";
-              
-
-                if (isset($_SESSION["user"])) {
+            if (isset($_SESSION["user"])) {
                     if ($_SESSION["user"]["role"] == 1) {
                         echo number_format($_SESSION["user"]["balance"], 2);
                         echo"$";
                         echo "<a href=\"/Online-game-shop/public/view/cart.php\" class=\"cart-link\">
                        <img src=\"http://localhost/Online-game-shop/public/images/cart.svg\" class=\"cart\" /></a>";
-
                     }
                     if ($_SESSION["user"]["role"] == 2) {
                         echo "<a href=\"/Online-game-shop/public/view/Admin/home.php\" class=\"panel-link\">Admin Panel</a>";

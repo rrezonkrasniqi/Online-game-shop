@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $username = $_POST["username"];
   $password = $_POST["password"];
   $birthday = $_POST["birthday"];
-
+  $balance = 100;  
 
 
 
@@ -42,8 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if ($result_email->num_rows > 0 || $result_username->num_rows > 0 || !preg_match($passwordRegex, $password)) {
   } else {
-    $insertQuery = "INSERT INTO users (name, email, username, password, birthday) 
-                        VALUES ('$name', '$email', '$username', '$hashedPassword', '$birthday')";
+    $insertQuery = "INSERT INTO users (name, email, username, password, birthday, balance) 
+                        VALUES ('$name', '$email', '$username', '$hashedPassword', '$birthday','$balance')";
 
     if ($db->query($insertQuery)) {
       $roleQuery = "SELECT role_id FROM users WHERE username = '$username'";
@@ -55,9 +55,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["user"] = array(
           "name" => $name,
           "username" => $username,
-          "role" => $userRole
+          "role" => $userRole,
+          "balance"=>$balance
         );
-
+        
         header("Location: ../../index.php");
         exit();
       } else {

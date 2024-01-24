@@ -9,14 +9,12 @@ if (isset($_SESSION["user"]["id"])) {
     $gameId = $_GET["id"];
     $database = new Database("127.0.0.1", "root", "", "shop");
 
-    // Check if the user already owns the game
     $checkOwnershipSql = "SELECT * FROM owned_game WHERE user_id = $userId AND game_id = $gameId";
     $checkOwnershipResult = $database->query($checkOwnershipSql);
 
     if ($checkOwnershipResult !== false && $checkOwnershipResult->num_rows > 0) {
         echo "You already own this game.";
     } else {
-        // User does not own the game, proceed with the purchase
         $priceSql = "SELECT price FROM game WHERE game_id = $gameId";
         $priceResult = $database->query($priceSql);
 
@@ -45,6 +43,6 @@ if (isset($_SESSION["user"]["id"])) {
 
     $database->close();
 } else {
-    echo "User not logged in.";
+    header("Location: ../../public/view/Authentication/login.php");
 }
 ?>
