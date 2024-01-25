@@ -24,7 +24,8 @@ require_once '../../src/controller/News.php';
     <div class="games-container">
 
                 <?php
-            $database = new Database("127.0.0.1", "root", "", "shop");
+            $database = new Database();
+
                 $sql = "SELECT * FROM news";
                 $result = $database->query($sql);
 

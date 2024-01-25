@@ -1,7 +1,7 @@
 <?php
 include_once('../../config/Database.php');
 
-$database = new Database("127.0.0.1", "root", "", "shop");
+$database = new Database();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = ($_POST['email']);

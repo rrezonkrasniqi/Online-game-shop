@@ -41,7 +41,8 @@ require_once '../../../src/controller/User.php';
             $Id = $_GET['id'];
 
 
-            $database = new Database("127.0.0.1", "root", "", "shop");
+            $database= new Database();
+
             $sql = "SELECT * FROM users WHERE id = $Id";
             $result = $database->query($sql);
 

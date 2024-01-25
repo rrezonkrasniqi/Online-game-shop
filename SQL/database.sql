@@ -67,7 +67,7 @@ CREATE TABLE contact (
     report_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255),
     report TEXT,
-    email VARCHAR(255),
+    email VARCHAR(255)
 );
 
 

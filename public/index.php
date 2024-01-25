@@ -60,7 +60,7 @@ require_once '../src/controller/News.php';
       </div>
       <section class="latest-container">
         <?php
-        $database = new Database("127.0.0.1", "root", "", "shop");
+$database = new Database();
 
         $sql = "SELECT * FROM game WHERE game_id IN (4,6,9)";
         $result = $database->query($sql);
@@ -94,7 +94,8 @@ require_once '../src/controller/News.php';
       </div>
       <div class="news-container">
         <?php
-        $database = new Database("127.0.0.1", "root", "", "shop");
+        $database = new Database();
+
         $sql = "SELECT * FROM news where news_id IN (5,4)";
         $result = $database->query($sql);
 
@@ -127,7 +128,8 @@ require_once '../src/controller/News.php';
       </div>
       <section class="latest-container">
         <?php
-        $database = new Database("127.0.0.1", "root", "", "shop");
+        $database = new Database();
+
 
         $sql = "SELECT * FROM game WHERE game_id IN (1,6,3)";
         $result = $database->query($sql);
@@ -161,7 +163,8 @@ require_once '../src/controller/News.php';
       </div>
       <section class="latest-container">
         <?php
-        $database = new Database("127.0.0.1", "root", "", "shop");
+        $database = new Database();
+
 
         $sql = "SELECT * FROM game WHERE game_id IN (11,15,18)";
         $result = $database->query($sql);
@@ -194,7 +197,8 @@ require_once '../src/controller/News.php';
       </div>
       <section class="latest-container">
         <?php
-        $database = new Database("127.0.0.1", "root", "", "shop");
+        $database = new Database();
+
 
         $sql = "SELECT * FROM game WHERE game_id IN (2,20,4)";
         $result = $database->query($sql);

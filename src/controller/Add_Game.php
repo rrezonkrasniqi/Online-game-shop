@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         echo "Please select an image file.";
     }
-    $database = new Database("127.0.0.1", "root", "", "shop");
+    $database = new Database();
 
     $name = $_POST['name'];
     $subject = $_POST['subject'];

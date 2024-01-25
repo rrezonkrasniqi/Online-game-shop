@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $username = $_POST["username"];
   $password = $_POST["password"];
 
-  $db = new Database("127.0.0.1", "root", "", "shop");
+$db= new Database();
 
   if ($db->query("SELECT 1") === FALSE) {
     die("Connection failed: ");

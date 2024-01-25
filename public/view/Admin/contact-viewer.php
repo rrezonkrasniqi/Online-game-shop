@@ -35,7 +35,8 @@ require_once '../../../src/controller/Contact.php';
     }
     ?>
         <?php
-        $database = new Database("127.0.0.1", "root", "", "shop");
+        $database= new Database();
+
 
         $sql = "SELECT * FROM contact";
         $result = $database->query($sql);

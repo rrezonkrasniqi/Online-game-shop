@@ -10,19 +10,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
         $sql = "DELETE FROM users WHERE id = $id";
 
         if ($database->query($sql)) {
-            echo "User deleted successfully";
+            echo "<script>alert('User deleted successfuly'); </script>";
             echo '<br><a href="javascript:history.go(-1)">Go Back</a>';
             header("Location: ../../public/view/admin/user-manager.php");
 
             
         } else {
-            echo "Error deleting User";
-            echo '<br><a href="javascript:history.go(-1)">Go Back</a>';
-
+            echo "<script>
+            if (window.confirm('Error deleting User')) {
+                window.history.go(-1);
+            }
+        </script>";    
         }
     } else {
-        echo "Invalid user ID";
-        echo '<br><a href="javascript:history.go(-1)">Go Back</a>';
+        echo "<script>
+        if (window.confirm('Invalid user ID')) {
+            window.history.go(-1);
+        }
+    </script>"; 
 
     }
 

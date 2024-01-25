@@ -33,7 +33,8 @@ $searchTerm = isset($_GET['search']) ? $_GET['search'] : '';
         <div class="games-container">
 
             <?php
-            $database = new Database("127.0.0.1", "root", "", "shop");
+            $database = new Database();
+
 
 
             $sql = "SELECT * FROM game WHERE name LIKE '%$searchTerm%'";

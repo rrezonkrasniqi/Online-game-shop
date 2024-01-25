@@ -25,15 +25,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     } else {
-        echo "Error updating game";
-        echo '<br><a href="javascript:history.go(-1)">Go Back</a>';
-
+        echo "<script>
+        if (window.confirm('Error updating game')) {
+            window.history.go(-1);
+        }
+    </script>"; 
+   
     }
 
     $database->close();
 } else {
-    echo "Invalid request";
-    echo '<br><a href="javascript:history.go(-1)">Go Back</a>';
-
+    echo "<script>
+    if (window.confirm('Invalid request')) {
+        window.history.go(-1);
+    }
+</script>"; 
 }
 ?>

@@ -2,7 +2,7 @@
 include_once('../../config/Database.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $database = new Database("127.0.0.1", "root", "", "shop");
+    $database = new Database();
 
     $newsTitle = $_POST['news-title'];
     $date = $_POST['news-date'];

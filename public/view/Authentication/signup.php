@@ -12,15 +12,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $username = $_POST["username"];
   $password = $_POST["password"];
   $birthday = $_POST["birthday"];
-  $balance = 100;  
+  $balance = 100;
 
 
 
-  
+
 
   $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-  $db = new Database("127.0.0.1", "root", "", "shop");
+$db= new Database();
 
   if ($db->query("SELECT 1") === FALSE) {
     die("Connection failed: ");
@@ -36,8 +36,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $passwordRegex = '/^(?=.*[a-zA-Z])(?=.*\d).{7,}$/';
   $error_password = !preg_match($passwordRegex, $password);
 
-  $error_username= $result_username->num_rows > 0;
-  $error_email= $result_email->num_rows > 0;
+  $error_username = $result_username->num_rows > 0;
+  $error_email = $result_email->num_rows > 0;
 
 
   if ($result_email->num_rows > 0 || $result_username->num_rows > 0 || !preg_match($passwordRegex, $password)) {
@@ -56,9 +56,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           "name" => $name,
           "username" => $username,
           "role" => $userRole,
-          "balance"=>$balance
+          "balance" => $balance
         );
-        
+
         header("Location: ../../index.php");
         exit();
       } else {
@@ -96,7 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     <div class="right-side">
       <div class="form-container">
-        <form id="signupForm" action="signup.php" method="post" autocomplete="off"  onsubmit="return saveAndRedirect()">
+        <form id="signupForm" action="signup.php" method="post" autocomplete="off" onsubmit="return saveAndRedirect()">
           <h1>Sign Up</h1>
 
           <label for="name">Name:</label>
@@ -117,9 +117,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <label for="password">Password:</label>
           <input type="password" id="password" name="password" required />
           <?php if ($error_password == true) : ?>
-            <span class="error-message"><li>Password must longer than 7 characters</li>
-            <li>Include at least one letter and one digit</li>
-            <li>Please try again.</li></span>
+            <span class="error-message">
+              <li>Password must longer than 7 characters</li>
+              <li>Include at least one letter and one digit</li>
+              <li>Please try again.</li>
+            </span>
           <?php endif; ?>
           <label for="birthday">Birthday:</label>
           <input type="date" id="birthday" name="birthday" required />
@@ -136,18 +138,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </div>
   </div>
   <script>
-function saveAndRedirect() {
-  var name = document.getElementById("name").value;
-  var email = document.getElementById("email").value;
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
-  var birthday = document.getElementById("birthday").value;
+    function saveAndRedirect() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      var birthday = document.getElementById("birthday").value;
 
-  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]/;
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]/;
 
 
-  
-  function isPasswordValid() {
+
+      function isPasswordValid() {
         var passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d).{7,}$/;
         return passwordRegex.test(password);
       }
@@ -155,29 +157,29 @@ function saveAndRedirect() {
       if (isPasswordValid == false) {
         alert("Password must ");
 
-      } 
+      }
       console.log(isPasswordValid())
 
 
-  var currentDate = new Date();
-  var userBirthday = new Date(birthday);
-  var ageDiff = currentDate.getFullYear() - userBirthday.getFullYear();
-  if (ageDiff < 9) {
-    alert("You must be at least 9 years old to sign up.");
-    return false;
-  }
+      var currentDate = new Date();
+      var userBirthday = new Date(birthday);
+      var ageDiff = currentDate.getFullYear() - userBirthday.getFullYear();
+      if (ageDiff < 9) {
+        alert("You must be at least 9 years old to sign up.");
+        return false;
+      }
 
-  if (name === "" || email === "" || username === "" || password === "") {
-    alert("Please fill the entire form");
-    return false;
-  } else if (!emailRegex.test(email)) {
-    alert("Please write an email");
-    return false;
-  }
+      if (name === "" || email === "" || username === "" || password === "") {
+        alert("Please fill the entire form");
+        return false;
+      } else if (!emailRegex.test(email)) {
+        alert("Please write an email");
+        return false;
+      }
 
-  return true;
-}
-</script>
+      return true;
+    }
+  </script>
   <div class="backwrap gradient">
     <div class="back-shapes">
       <span class="floating circle" style="
