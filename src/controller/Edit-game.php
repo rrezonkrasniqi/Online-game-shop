@@ -14,13 +14,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $rating = $_POST['rating'];
     $creator = $_POST['creator'];
 
-    // Image handling
+    $image = '';  
+
     if (isset($_FILES['image']) && !empty($_FILES['image']['name'])) {
         $targetDir = "../uploads/";
         $fileName = basename($_FILES["image"]["name"]);
         $targetFilePath = $targetDir . $fileName;
         $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
-        $fileNameWithUrl="http://localhost/Online-game-shop/src/uploads/".$fileName;
 
         $allowTypes = array('jpg', 'jpeg', 'png', 'gif');
         if (in_array($fileType, $allowTypes)) {
@@ -36,8 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo '<br><a href="javascript:history.go(-1)">Go Back</a>';
             exit;
         }
-    } else {
-        $fileNameWithUrl = $_POST['image'];
     }
 
     $sql = "UPDATE game SET 
@@ -48,9 +46,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             price = '$price',
             platform = '$platform',
             rating = '$rating',
-            creator = '$creator',
-            image = '$fileNameWithUrl'
-            WHERE game_id = $id";
+            creator = '$creator'";
+    
+    if (!empty($image)) {
+        $sql .= ", image = '$image'";
+    }
+
+    $sql .= " WHERE game_id = $id";
 
     if ($database->query($sql)) {
         echo "Game updated successfully";
@@ -62,7 +64,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             window.history.go(-1);
         }
     </script>"; 
- 
     }
 
     $database->close();

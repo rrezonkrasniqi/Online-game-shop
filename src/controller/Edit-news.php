@@ -16,21 +16,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             news_date = '$date',
             news_text = '$text',
             image = '$image',
-            newsShortDesc = '$shortDcs'";
+            newsShortDesc = '$shortDcs'
+            WHERE news_id = $id";
 
     if ($database->query($sql)) {
         echo "News updated successfully";
         echo '<br><a href="javascript:history.go(-1)">Go Back</a>';
         header("Location: ../../public/view/admin/news-manager.php");
-
-
     } else {
         echo "<script>
-        if (window.confirm('Error updating game')) {
+        if (window.confirm('Error updating news')) {
             window.history.go(-1);
         }
     </script>"; 
-   
     }
 
     $database->close();

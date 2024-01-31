@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     VALUES ('$name', '$subject', '$description', '$release_date', '$price', '$platform', '$rating', '$creator', ' $fileNameWithUrl')";
 
             if ($database->query($sql)) {
-                echo "Game added successfully";
+                header("Location: ../../public/view/admin/game-manager.php");
             } else {
                 echo "Error";
             }

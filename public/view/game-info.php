@@ -13,8 +13,8 @@ require_once '../../src/controller/Game.php';
     <link rel="stylesheet" href="/Online-game-shop/public/css/global.css">
     <link rel="stylesheet" href="/Online-game-shop/public/css/index.css">
     <link rel="stylesheet" href="/Online-game-shop/public/css/game.css">
-    <script src="js/navbar.js"></script>
-</head>
+    <link rel="icon" href="http://localhost/Online-game-shop/public/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="http://localhost/Online-game-shop/public/images/favicon.ico" type="image/x-icon" /></head>
 
 <body>
 <?php include('navbar.php'); ?>

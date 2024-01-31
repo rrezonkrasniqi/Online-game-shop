@@ -85,8 +85,8 @@ $db= new Database();
   <link rel="stylesheet" href="/Online-game-shop/public/css/global.css">
   <link rel="stylesheet" href="/Online-game-shop/public/css/index.css">
   <link rel="stylesheet" href="/Online-game-shop/public/css/signup.css">
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="http://localhost/Online-game-shop/public/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="http://localhost/Online-game-shop/public/images/favicon.ico" type="image/x-icon" />
 </head>
 
 <body>
@@ -128,13 +128,14 @@ $db= new Database();
 
           <button type="submit" name="submit">Sign Up</button>
           <div class="under-links">
-            <span>Already have an account? <a href="login.html" class="link">Login</a></span>
+            <span>Already have an account? <a href="login.php" class="link">Login</a></span>
           </div>
         </form>
       </div>
+      <div class="right-line"></div>
+
     </div>
 
-    <div class="right-line"></div>
   </div>
   </div>
   <script>

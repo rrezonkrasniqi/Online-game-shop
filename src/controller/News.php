@@ -59,10 +59,8 @@ class News
 
         echo "<article>";
 
-        echo "  <div>{$this->news_text}";
-
-        echo "  </div>";
-
+        echo "<div>{$this->news_text}";
+        echo "</div>";
         echo "</article>";
     }
 
