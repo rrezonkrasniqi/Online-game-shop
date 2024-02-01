@@ -1,43 +1,32 @@
-<?php
-session_start();
+<?php 
+$token = $_GET["token"];
+$tokenHash = hash("sha256",$token);
 
-require_once("../../../config/Database.php");
+$conn = new mysqli("localhost", "root", "", "shop");
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $username = $_POST["username"];
-  $password = $_POST["password"];
+$sql = "select * from users where reset_token_hash = ?";
 
-$db= new Database();
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s",$tokenHash);
+$stmt->execute();
 
-  if ($db->query("SELECT 1") === FALSE) {
-    die("Connection failed: ");
-  }
+$result = $stmt->get_result();
 
-  $checkQuery = "SELECT * FROM users WHERE username = '$username'";
-  $result = $db->query($checkQuery);
+$user = $result->fetch_assoc();
 
-  if ($result->num_rows > 0) {
-    $user = $result->fetch_assoc();
-
-    if (password_verify($password, $user["password"])) {
-      $_SESSION["user"] = array(
-        "id" => $user["id"],
-        "username" => $user["username"],
-        "name" => $user["name"],
-        "email" => $user["email"],
-        "birthday" => $user["birthday"],
-        "balance" => $user["balance"],
-        "role" => $user["role_id"]
-      );
-
-      header("Location: ../../index.php");
-      exit();
-    }
-  }
-
-  $db->close();
+if($user === null)
+{
+    die("token not found");
 }
+
+if(strtotime($user["reset_token_expires_at"])<= time())
+{
+    die("token has expired");
+}
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +34,7 @@ $db= new Database();
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login</title>
+  <title>Forgot Password</title>
   <link rel="stylesheet" href="/Online-game-shop/public/css/global.css">
   <link rel="stylesheet" href="/Online-game-shop/public/css/index.css">
   <link rel="stylesheet" href="/Online-game-shop/public/css/login.css">
@@ -57,54 +46,23 @@ $db= new Database();
 
 <body>
   <div class="container">
-    <div class="left-side">
-      <img src="../../images/logo.png" alt="logo" class="login-logo" />
-    </div>
-    <div class="right-side">
+    <div class="forgot-container">
       <div class="form-container">
-        <form id="loginForm" action="login.php" method="post" onsubmit="return saveAndRedirect()">
-          <h1>Login</h1>
-          <label for="username">Username:</label>
-          <input type="text" id="username" name="username" required />
-          <?php if (isset($username) && $result->num_rows === 0) : ?>
-            <span class="error-message">User not found.</span>
-          <?php endif; ?>
-          <label for="password">Password: </label>
-          <input type="password" id="password" name="password" required />
-          <?php if (isset($username) && $result->num_rows > 0 && !password_verify($password, $user["password"])) : ?>
-            <span class="error-message">Incorrect password.</span>
-          <?php endif; ?>
-          <input type="submit" name="submit" value="Login" id="submit">
-          <div class="under-links">
-            <span><a href="signup.php" class="link">Sign Up</a></span>
-            <span><a href="forgotPassword.php" class="link">Forgot Password?</a></span>
+        <form action="../../../public/view/reset-password-controller.php" method="post">
+          <input type="hidden" name="token" value="<?= htmlspecialchars($token) ?>">
+          <h1>Reset Password</h1>
 
-          </div>
+            <input type="password" name="password" placeholder="Password" required />
+          <input type="submit" name="submit" value="Reset" id="submit">
         </form>
       </div>
-      <div class="right-line"></div>
     </div>
   </div>
 
   <script>
-    function saveAndRedirect() {
-      var username = document.getElementById("username").value;
-      var password = document.getElementById("password").value;
-      console.log(username);
-
-      function isPasswordValid() {
-        var passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d).{7,}$/;
-        return passwordRegex.test(password);
-      }
-      console.log(isPasswordValid())
-
-      if (isPasswordValid() && username !== "") {
-
-      } else {
-        alert("Please enter both username and password.");
-        return false;
-      }
-    }
+    document.querySelector('form').addEventListener('submit', function () {
+      window.location.href = 'login.php';
+    });
   </script>
 </body>
 

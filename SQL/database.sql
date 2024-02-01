@@ -22,6 +22,8 @@ CREATE TABLE users (
     birthday DATE NOT NULL,
     balance DECIMAL(10, 2) DEFAULT 0.00,
     role_id INT DEFAULT 1,
+    reset_token_hash VARCHAR(255),
+    reset_token_expires_at DATE,
     FOREIGN KEY (role_id) REFERENCES roles(role_id)
 );
 
@@ -45,7 +47,9 @@ CREATE TABLE owned_game (
     PRIMARY KEY (user_id, game_id),
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (game_id) REFERENCES game(game_id)
+        ON DELETE CASCADE
 );
+
 
 
 CREATE TABLE news (

@@ -1,51 +1,10 @@
-<?php
-session_start();
-
-require_once("../../../config/Database.php");
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $username = $_POST["username"];
-  $password = $_POST["password"];
-
-$db= new Database();
-
-  if ($db->query("SELECT 1") === FALSE) {
-    die("Connection failed: ");
-  }
-
-  $checkQuery = "SELECT * FROM users WHERE username = '$username'";
-  $result = $db->query($checkQuery);
-
-  if ($result->num_rows > 0) {
-    $user = $result->fetch_assoc();
-
-    if (password_verify($password, $user["password"])) {
-      $_SESSION["user"] = array(
-        "id" => $user["id"],
-        "username" => $user["username"],
-        "name" => $user["name"],
-        "email" => $user["email"],
-        "birthday" => $user["birthday"],
-        "balance" => $user["balance"],
-        "role" => $user["role_id"]
-      );
-
-      header("Location: ../../index.php");
-      exit();
-    }
-  }
-
-  $db->close();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login</title>
+  <title>Forgot Password</title>
   <link rel="stylesheet" href="/Online-game-shop/public/css/global.css">
   <link rel="stylesheet" href="/Online-game-shop/public/css/index.css">
   <link rel="stylesheet" href="/Online-game-shop/public/css/login.css">
@@ -57,55 +16,18 @@ $db= new Database();
 
 <body>
   <div class="container">
-    <div class="left-side">
-      <img src="../../images/logo.png" alt="logo" class="login-logo" />
-    </div>
-    <div class="right-side">
-      <div class="form-container">
-        <form id="loginForm" action="login.php" method="post" onsubmit="return saveAndRedirect()">
-          <h1>Login</h1>
-          <label for="username">Username:</label>
-          <input type="text" id="username" name="username" required />
-          <?php if (isset($username) && $result->num_rows === 0) : ?>
-            <span class="error-message">User not found.</span>
-          <?php endif; ?>
-          <label for="password">Password: </label>
-          <input type="password" id="password" name="password" required />
-          <?php if (isset($username) && $result->num_rows > 0 && !password_verify($password, $user["password"])) : ?>
-            <span class="error-message">Incorrect password.</span>
-          <?php endif; ?>
-          <input type="submit" name="submit" value="Login" id="submit">
-          <div class="under-links">
-            <span><a href="signup.php" class="link">Sign Up</a></span>
-            <span><a href="forgotPassword.php" class="link">Forgot Password?</a></span>
 
-          </div>
-        </form>
+      <div class="forgot-container">
+        <div class="form-container">
+      <form action="../../../src/controller/Forgot_Password.php" method="post">
+        <label for="email">Email</label>
+        <input type="text" name="email" placeholder="Email">
+        <br>
+        <input type="submit" name="submit" value="Submit" id="submit">
+        </form></div>      
+
       </div>
-      <div class="right-line"></div>
     </div>
-  </div>
-
-  <script>
-    function saveAndRedirect() {
-      var username = document.getElementById("username").value;
-      var password = document.getElementById("password").value;
-      console.log(username);
-
-      function isPasswordValid() {
-        var passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d).{7,}$/;
-        return passwordRegex.test(password);
-      }
-      console.log(isPasswordValid())
-
-      if (isPasswordValid() && username !== "") {
-
-      } else {
-        alert("Please enter both username and password.");
-        return false;
-      }
-    }
-  </script>
 </body>
 
 
