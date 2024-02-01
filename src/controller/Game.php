@@ -58,6 +58,30 @@ class Game
         echo "</div>";
         echo "</div>";
     }
+
+
+    public function displayIndexGames()
+    {
+        echo "<div class=\"game-card\">";
+        echo "<div class=\"image-container\">";
+        echo "<img src=\"{$this->image}\" alt=\"Game Image\" class=\"game-card-image\">";
+        echo "</div>";
+        echo "<div class=\"info-container\">";
+        echo "<div class=\"title-container\">";
+        echo "<span class=\"game-name\">{$this->name}</span>";
+        echo "</div>";
+        echo "<span class=\"price\">{$this->price}</span>";
+        echo "<a href=\"/Online-game-shop/public/view/game-info.php?name={$this->name}\">";
+        echo "<div class=\"button-container\">";
+        echo "<button class=\"read-more-btn\">Read more</button>";
+        echo "<button class=\"buy-btn\">";
+        echo "<img src=\"http://localhost/Online-game-shop/public/images/bag.svg\" alt=\"\" class=\"bag-img\">";
+        echo "</button>";
+        echo "</div>";
+        echo "</a>";
+        echo "</div>";
+        echo "</div>";
+    }
     public function displayOwned()
     {
         echo "<div class=\"game-card\">";
@@ -71,7 +95,9 @@ class Game
         echo "<a href=\"game-info.php?name={$this->name}\">";
         echo "<div class=\"button-container\">";
         echo "<button class=\"read-more-btn\">Read more</button>";
+        echo "<a href=\"LOL\">";
         echo "<button class=\"buy-btn\">Play</button>";
+        echo "</a>";
         echo "</div>";
         echo "</a>";
         echo "</div>";
@@ -91,7 +117,7 @@ class Game
         echo "<span class=\"game-rating\">$this->rating / 5</span>";
         echo "</div>";
         echo "<div class=\"game-info-bottom\">";
-        echo "<span class=\"game-price-sale\">{$this->price}$</span>";
+        echo "<span class=\"game-price-sale\">{$this->price}</span>";
         echo "<div class=\"button-container\">";
         echo "<a href=\"/Online-game-shop/src/controller/add-to-cart.php?id={$this->id}\">";
         echo "<button class=\"cart-btn\">Add to cart</button></a>";

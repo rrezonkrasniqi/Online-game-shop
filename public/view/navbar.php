@@ -1,4 +1,29 @@
-<script src="../js/navbar.js"></script>
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+
+function validateForm() {
+  var emailInput = document.getElementById("email");
+  var email = emailInput.value.trim();
+
+  var emailRegex = /[@.]/;
+
+  if (emailRegex.test(email)) {
+      alert('Please enter a valid email address.');
+      return false;
+  }
+
+  alert('You successfully subscribed to our newsletter');
+  return true;
+}
+</script>
 
 <nav class="navbar">
     <div class="main-container">
@@ -12,24 +37,17 @@
             <a href="/Online-game-shop/public/view/games.php">Games</a>
             <?php    
                 session_start();
-
             if (isset($_SESSION["user"])) {
                     if ($_SESSION["user"]["role"] == 1) {
                         echo "<a href=\"/Online-game-shop/public/view/owned-games.php\" >My Games</a>";
-             
                     }}
-                    
-
              echo "<div class=\"user-actions\">";
-              
-
-                if (isset($_SESSION["user"])) {
+            if (isset($_SESSION["user"])) {
                     if ($_SESSION["user"]["role"] == 1) {
                         echo number_format($_SESSION["user"]["balance"], 2);
                         echo"$";
                         echo "<a href=\"/Online-game-shop/public/view/cart.php\" class=\"cart-link\">
                        <img src=\"http://localhost/Online-game-shop/public/images/cart.svg\" class=\"cart\" /></a>";
-
                     }
                     if ($_SESSION["user"]["role"] == 2) {
                         echo "<a href=\"/Online-game-shop/public/view/Admin/home.php\" class=\"panel-link\">Admin Panel</a>";

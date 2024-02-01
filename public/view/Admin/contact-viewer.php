@@ -15,7 +15,8 @@ require_once '../../../src/controller/Contact.php';
     <link rel="stylesheet" href="/Online-game-shop/public/css/game.css">
     <link rel="stylesheet" href="/Online-game-shop/public/css/admin.css">
     <link rel="stylesheet" href="/Online-game-shop/public/css/login.css">
-
+    <link rel="icon" href="http://localhost/Online-game-shop/public/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="http://localhost/Online-game-shop/public/images/favicon.ico" type="image/x-icon" />
 </head>
 
 <body>
@@ -35,7 +36,8 @@ require_once '../../../src/controller/Contact.php';
     }
     ?>
         <?php
-        $database = new Database("127.0.0.1", "root", "", "shop");
+        $database= new Database();
+
 
         $sql = "SELECT * FROM contact";
         $result = $database->query($sql);

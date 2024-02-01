@@ -16,24 +16,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             news_date = '$date',
             news_text = '$text',
             image = '$image',
-            newsShortDesc = '$shortDcs'";
+            newsShortDesc = '$shortDcs'
+            WHERE news_id = $id";
 
     if ($database->query($sql)) {
         echo "News updated successfully";
         echo '<br><a href="javascript:history.go(-1)">Go Back</a>';
         header("Location: ../../public/view/admin/news-manager.php");
-
-
     } else {
-        echo "Error updating game";
-        echo '<br><a href="javascript:history.go(-1)">Go Back</a>';
-
+        echo "<script>
+        if (window.confirm('Error updating news')) {
+            window.history.go(-1);
+        }
+    </script>"; 
     }
 
     $database->close();
 } else {
-    echo "Invalid request";
-    echo '<br><a href="javascript:history.go(-1)">Go Back</a>';
-
+    echo "<script>
+    if (window.confirm('Invalid request')) {
+        window.history.go(-1);
+    }
+</script>"; 
 }
 ?>

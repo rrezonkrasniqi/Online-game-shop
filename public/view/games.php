@@ -16,8 +16,8 @@ $searchTerm = isset($_GET['search']) ? $_GET['search'] : '';
     <link rel="stylesheet" href="/Online-game-shop/public/css/global.css">
     <link rel="stylesheet" href="/Online-game-shop/public/css/index.css">
     <link rel="stylesheet" href="/Online-game-shop/public/css/game.css">
-    <script src="js/navbar.js"></script>
-</head>
+    <link rel="icon" href="http://localhost/Online-game-shop/public/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="http://localhost/Online-game-shop/public/images/favicon.ico" type="image/x-icon" /></head>
 
 <body>
     <?php include('navbar.php'); ?>
@@ -33,7 +33,8 @@ $searchTerm = isset($_GET['search']) ? $_GET['search'] : '';
         <div class="games-container">
 
             <?php
-            $database = new Database("127.0.0.1", "root", "", "shop");
+            $database = new Database();
+
 
 
             $sql = "SELECT * FROM game WHERE name LIKE '%$searchTerm%'";

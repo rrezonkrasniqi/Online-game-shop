@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $username = $_POST["username"];
   $password = $_POST["password"];
 
-  $db = new Database("127.0.0.1", "root", "", "shop");
+$db= new Database();
 
   if ($db->query("SELECT 1") === FALSE) {
     die("Connection failed: ");
@@ -49,8 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <link rel="stylesheet" href="/Online-game-shop/public/css/global.css">
   <link rel="stylesheet" href="/Online-game-shop/public/css/index.css">
   <link rel="stylesheet" href="/Online-game-shop/public/css/login.css">
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="http://localhost/Online-game-shop/public/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="http://localhost/Online-game-shop/public/images/favicon.ico" type="image/x-icon" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
@@ -77,6 +77,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <input type="submit" name="submit" value="Login" id="submit">
           <div class="under-links">
             <span><a href="signup.php" class="link">Sign Up</a></span>
+            <span><a href="forgotPassword.php" class="link">Forgot Password?</a></span>
+
           </div>
         </form>
       </div>

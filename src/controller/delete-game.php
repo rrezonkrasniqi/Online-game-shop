@@ -2,7 +2,7 @@
 include_once('../../config/Database.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
-    $database = new Database("127.0.0.1", "root", "", "shop");
+    $database = new Database();
 
     $id = filter_var($_GET['id'], FILTER_VALIDATE_INT);
 

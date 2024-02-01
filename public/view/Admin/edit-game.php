@@ -14,6 +14,8 @@ require_once '../../../src/controller/Game.php';
     <link rel="stylesheet" href="/Online-game-shop/public/css/game.css">
     <link rel="stylesheet" href="/Online-game-shop/public/css/admin.css">
     <link rel="stylesheet" href="/Online-game-shop/public/css/login.css">
+    <link rel="icon" href="http://localhost/Online-game-shop/public/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="http://localhost/Online-game-shop/public/images/favicon.ico" type="image/x-icon" />
 </head>
 
 <body>
@@ -41,7 +43,8 @@ require_once '../../../src/controller/Game.php';
             $gameId = $_GET['id'];
 
       
-            $database = new Database("127.0.0.1", "root", "", "shop");
+            $database= new Database();
+
             $sql = "SELECT * FROM game WHERE game_id = $gameId";
             $result = $database->query($sql);
 
@@ -75,7 +78,7 @@ require_once '../../../src/controller/Game.php';
                     <input type="text" name="creator" value="<?php echo $row['creator']; ?>" required><br>
 
                     <label for="image">Image:</label>
-                    <input type="file" id="fileInput" name="image" accept="image/*" value="<?php echo $row['image']; ?>" required><br>
+                    <input type="file" id="fileInput" name="image" accept="image/*" value="<?php echo $row['image']; ?>" ><br>
     
 
                     <input type="submit" value="Update Game">

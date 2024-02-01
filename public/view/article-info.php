@@ -13,7 +13,8 @@ require_once '../../src/controller/News.php';
     <link rel="stylesheet" href="/Online-game-shop/public/css/global.css">
     <link rel="stylesheet" href="/Online-game-shop/public/css/index.css">
     <link rel="stylesheet" href="/Online-game-shop/public/css/news.css">
-    <script src="js/navbar.js"></script>
+    <link rel="icon" href="http://localhost/Online-game-shop/public/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="http://localhost/Online-game-shop/public/images/favicon.ico" type="image/x-icon" />
 </head>
 
 <body>
@@ -24,7 +25,8 @@ require_once '../../src/controller/News.php';
     <div class="games-container">
 
         <?php
-        $database = new Database("127.0.0.1", "root", "", "shop");
+        $database = new Database();
+
 
         if (isset($_GET['id'])) {
             $articleID = $_GET['id'];
