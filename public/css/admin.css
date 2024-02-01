@@ -1,0 +1,175 @@
+.continue-icon{
+    width: 40px;
+    transition: 0.3s;
+
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+}
+
+.option{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.option:hover{
+    background-color: rgba(128, 128, 128, 0.097);
+    .continue-icon{
+        translate:-20px;
+    }
+}
+
+
+
+.title-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.custom-button:hover {
+    background-color: #2980b9;
+}
+
+
+
+
+
+
+.game-card-crud {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid #cccccc5d;
+    background-color: #6666662c;
+    transition: 0.3s;
+    align-items: center;
+  }
+  
+
+  .game-card-crud a {
+    font-size: 0px;
+  }
+  
+  .game-card-image-crud {
+    cursor: pointer;
+  }
+  .image-container-crud {
+    display: flex;
+    width: 70px;
+  }
+  
+  .image-container-crud img {
+    width: 100%;
+  }
+  
+  .info-container-crud {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: start;
+    align-items: baseline;
+  }
+  
+ 
+  
+  .button-container-crud {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .title-container-crud {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .delete-btn{
+    background-color: red;
+    border-radius: 7px;
+    border: none;
+    padding: 5px;
+
+  }
+
+
+  .edit-btn{
+    background-color: rgb(39, 39, 255);
+    border-radius: 7px;
+    border: none;
+    padding: 5px 20px 5px 20px;
+    
+  }
+  .delete-btn img{
+    width: 30px;
+  }
+
+  table{
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    border: none;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+
+  }
+
+  tr:hover {background-color: rgba(93, 92, 92, 0.397);}
+
+
+  .action-container{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .contact-card{
+    margin-top: 30px;
+
+
+      border-radius: 15px;
+      display: flex;
+      flex-direction: row;
+      border: 2px solid #cccccc5d;
+      background-color: #6666662c;
+      transition: 0.3s;
+    }
+    
+    .contact-card:hover {
+      background-color: #63636378;
+      border: 2px solid #cccccc9a;
+    }
+  
+
+    @media screen and (max-width: 630px) {
+      .contact-card {
+            margin-top: 30px;
+
+            margin-left: 20px;
+            margin-right: 20px;       
+      }
+    }
