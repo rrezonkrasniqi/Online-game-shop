@@ -51,7 +51,7 @@ class Game
         echo "<div class=\"button-container\">";
         echo "<button class=\"read-more-btn\">Read more</button>";
         echo "<button class=\"buy-btn\">";
-        echo "<img src=\"http://localhost/Online-game-shop/public/images/bag.svg\" alt=\"\" class=\"bag-img\">";
+        echo "<img src=\"http://3.138.55.27/Online-game-shop/public/images/bag.svg\" alt=\"\" class=\"bag-img\">";
         echo "</button>";
         echo "</div>";
         echo "</a>";
@@ -75,7 +75,7 @@ class Game
         echo "<div class=\"button-container\">";
         echo "<button class=\"read-more-btn\">Read more</button>";
         echo "<button class=\"buy-btn\">";
-        echo "<img src=\"http://localhost/Online-game-shop/public/images/bag.svg\" alt=\"\" class=\"bag-img\">";
+        echo "<img src=\"http://3.138.55.27/Online-game-shop/public/images/bag.svg\" alt=\"\" class=\"bag-img\">";
         echo "</button>";
         echo "</div>";
         echo "</a>";
@@ -122,7 +122,7 @@ class Game
         echo "<a href=\"/Online-game-shop/src/controller/add-to-cart.php?id={$this->id}\">";
         echo "<button class=\"cart-btn\">Add to cart</button></a>";
         echo "<a href=\"/Online-game-shop/src/controller/buy-game.php?id={$this->id}\">";
-        echo "<button class=\"buy-btn\"><img src=\"http://localhost/Online-game-shop/public/images/bag.svg\" alt=\"\" class=\"bag-img\" /></button></div></a>";
+        echo "<button class=\"buy-btn\"><img src=\"http://3.138.55.27/Online-game-shop/public/images/bag.svg\" alt=\"\" class=\"bag-img\" /></button></div></a>";
         echo "</div>";
         echo "</div>";
         echo "</div>";
@@ -151,7 +151,7 @@ class Game
         echo "<button class=\"read-more-btn\">Edit</button>";
         echo "</a>";
         echo "<a href=\"/Online-game-shop/src/controller/delete-game.php?id={$this->id}\" class=\"delete-btn\">";
-        echo "<img src=\"http://localhost/Online-game-shop/public/images/delete.png\" alt=\"\" class=\"delete-img\">";
+        echo "<img src=\"http://3.138.55.27/Online-game-shop/public/images/delete.png\" alt=\"\" class=\"delete-img\">";
         echo "</a>";
         echo "</div>";
         echo "</div>";

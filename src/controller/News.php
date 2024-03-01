@@ -83,7 +83,7 @@ class News
         echo "</a>";
 
         echo "<a href=\"/Online-game-shop/src/controller/delete-news.php?id={$this->news_id}\" class=\"delete-btn\">";
-        echo "<img src=\"http://localhost/Online-game-shop/public/images/delete.png\" alt=\"\" class=\"delete-img\">";
+        echo "<img src=\"http://3.138.55.27/Online-game-shop/public/images/delete.png\" alt=\"\" class=\"delete-img\">";
         echo "</a>";
 
         echo "</div>";

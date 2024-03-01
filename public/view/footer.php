@@ -2,7 +2,7 @@
   <div class="main-container">
     <footer>
       <div>
-        <img src="http://localhost/Online-game-shop/public/images/logo.png" alt="" />
+        <img src="http://3.138.55.27/Online-game-shop/public/images/logo.png" alt="" />
         <h1>Online Game's Shop</h1>
         <h3>Rrezon & Enes Solutions TM</h3>
         <h4>Prizren 20000</h4>

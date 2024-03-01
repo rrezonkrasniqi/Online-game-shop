@@ -15,7 +15,7 @@
 
         $expire = date("Y-m-d H:i:s",time() + 60 * 2000);
 
-        $conn = new mysqli("localhost", "root", "", "shop");
+        $conn = new mysqli("3.138.55.27", "root", "", "shop");
 
         $sql = "update users set reset_token_hash = ?,
                                 reset_token_expires_at = ?
@@ -45,7 +45,7 @@
             $mail->isHTML(true);
             $mail->Subject = "Reset Password";
             $mail->Body = <<<END
-                Click here <a href="http://localhost/Online-game-shop/public/view/Authentication/reset-password.php?token=$token">here</a> to reset your password
+                Click here <a href="http://3.138.55.27/Online-game-shop/public/view/Authentication/reset-password.php?token=$token">here</a> to reset your password
             END;
 
             try
