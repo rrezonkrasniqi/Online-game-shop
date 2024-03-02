@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="/Online-game-shop/public/css/game.css">
     <link rel="stylesheet" href="/Online-game-shop/public/css/admin.css">
     <link rel="stylesheet" href="/Online-game-shop/public/css/login.css">
-    <link rel="icon" href="http://3.138.55.27/Online-game-shop/public/images/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="http://3.138.55.27/Online-game-shop/public/images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="http://localhost/Online-game-shop/public/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="http://localhost/Online-game-shop/public/images/favicon.ico" type="image/x-icon" />
 </head>
 
 <body>

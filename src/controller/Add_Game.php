@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $fileName = basename($_FILES["image"]["name"]);
     $targetFilePath = $targetDir . $fileName;
     $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
-    $fileNameWithUrl="http://3.138.55.27/Online-game-shop/src/uploads/".$fileName;
+    $fileNameWithUrl="http://localhost/Online-game-shop/src/uploads/".$fileName;
     $allowTypes = array('jpg', 'jpeg', 'png', 'gif');
     if (in_array($fileType, $allowTypes)) {
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath)) {

@@ -29,7 +29,7 @@ function validateForm() {
     <div class="main-container">
         <div class="topnav" id="myTopnav">
             
-            <img src="http://3.138.55.27/Online-game-shop/public/images/logo.png" alt="" class="navlogo" />
+            <img src="http://localhost/Online-game-shop/public/images/logo.png" alt="" class="navlogo" />
             <a href="/Online-game-shop/public/index.php">Home</a>
             <a href="/Online-game-shop/public/view/news.php">News</a>
             <a href="/Online-game-shop/public/view/contact.php">Contact</a>
@@ -47,7 +47,7 @@ function validateForm() {
                         echo number_format($_SESSION["user"]["balance"], 2);
                         echo"$";
                         echo "<a href=\"/Online-game-shop/public/view/cart.php\" class=\"cart-link\">
-                       <img src=\"http://3.138.55.27/Online-game-shop/public/images/cart.svg\" class=\"cart\" /></a>";
+                       <img src=\"http://localhost/Online-game-shop/public/images/cart.svg\" class=\"cart\" /></a>";
                     }
                     if ($_SESSION["user"]["role"] == 2) {
                         echo "<a href=\"/Online-game-shop/public/view/Admin/home.php\" class=\"panel-link\">Admin Panel</a>";
@@ -58,7 +58,7 @@ function validateForm() {
                     $username = $_SESSION["user"]["username"];
                     echo "<a href=\"/Online-game-shop/src/controller/session_destroyer.php\">Logout</a>";
                     echo "<span class='username'>$username</span>";
-                    echo "<img src=\"http://3.138.55.27/Online-game-shop/public/images/avatar.jpg\" class=\"avatar\" />";
+                    echo "<img src=\"http://localhost/Online-game-shop/public/images/avatar.jpg\" class=\"avatar\" />";
                 } else {
                     echo "<a href=\"/Online-game-shop/public/view/Authentication/login.php\">Login</a>";
                 }
@@ -66,7 +66,7 @@ function validateForm() {
             </div>
 
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="menu"><img src="http://3.138.55.27/Online-game-shop/public/images/menu.svg" class="menu-icon" /></i>
+                <i class="menu"><img src="http://localhost/Online-game-shop/public/images/menu.svg" class="menu-icon" /></i>
             </a>
         </div>
     </div>

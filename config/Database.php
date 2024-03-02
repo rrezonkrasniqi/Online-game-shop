@@ -3,7 +3,7 @@ class Database
 {
     private $conn;
 
-    public function __construct($servername = "3.138.55.27", $username = "root", $password = "rrezon", $dbname = "shop")
+    public function __construct($servername = "127.0.0.1", $username = "root", $password = "", $dbname = "shop")
     {
         $this->conn = new mysqli($servername, $username, $password, $dbname);
 
