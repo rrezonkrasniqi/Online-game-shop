@@ -44,6 +44,8 @@ Kjo faqe eshte inspirim nga
 
 ## Home Page
 
+http://rrezonkrasniqi.42web.io/index.html
+
 ![App Screenshot](https://online-game-shop-screenshots.s3.us-east-2.amazonaws.com/home_page.png)
 
 ## About Us
